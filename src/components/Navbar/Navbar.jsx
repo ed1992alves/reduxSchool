@@ -6,11 +6,11 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar-sitename">
-        <h3>YouSong</h3>
+        <h3>You<span>Song</span></h3>
       </div>
       <div className="navbar-links">
         <Link to="/">Artists</Link>
-        <Link to="/music">Songs</Link>
+        <Link to="/songs">Songs</Link>
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import "./SongsPage.scss";
 
 const SongsPage = () => {
-  return (
-    <div>SongsPage</div>
-  )
-}
+  return <div className="songsPage-container">SongsPage</div>;
+};
 
-export default SongsPage
+export default SongsPage;
