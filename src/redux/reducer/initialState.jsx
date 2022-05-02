@@ -7,7 +7,8 @@ export const initialState = {
       city: "Porto",
       nationality: "Portuguese",
       email: "quimquimquimdasirene.com",
-      photo: "",
+      photo:
+        "https://cdn.discordapp.com/attachments/968923738911428689/970636094959935528/unknown.png",
     },
     2: {
       id: 2,
@@ -16,7 +17,7 @@ export const initialState = {
       city: "Sydney",
       nationality: "Australian",
       email: "support@bookingagentinfo.com",
-      photo: "",
+      photo: "https://i.redd.it/qujx8lebnfk81.jpg",
     },
     3: {
       id: 3,
@@ -25,7 +26,8 @@ export const initialState = {
       city: "Porto",
       nationality: "Portuguese",
       email: "support@bookingagentinfo.com",
-      photo: "",
+      photo:
+        "https://scontent.flis12-1.fna.fbcdn.net/v/t39.30808-6/267446542_912162542818121_8243145234345412369_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=2pO0jo1lc-QAX_e5DWP&tn=-iNt1fX-N60_5woT&_nc_ht=scontent.flis12-1.fna&oh=00_AT-kygwM0TWGCmznnLeSCqi22uY_o2xtJapP88gihRA8vA&oe=6274C276",
     },
     4: {
       id: 4,
@@ -34,7 +36,7 @@ export const initialState = {
       city: "Coimbra",
       nationality: "Portuguese",
       email: "xxx@xxx.xxx",
-      photo: "",
+      photo: "http://www.syncsongs.pt/wp-content/uploads/2018/05/emanuel.jpg",
     },
     5: {
       id: 5,
@@ -43,7 +45,8 @@ export const initialState = {
       city: "Braga",
       nationality: "portuguese",
       email: "parra@hotmail.com",
-      photo: "",
+      photo:
+        "https://cdn.discordapp.com/attachments/968923738911428689/970636879298977842/IMG20211029142551.jpeg",
     },
     6: {
       id: 6,
@@ -52,7 +55,7 @@ export const initialState = {
       city: "Cabral",
       nationality: "Portuguese",
       email: "9277@gmail.com89203",
-      photo: "",
+      photo: "https://www.tv7dias.pt/wp-content/uploads/2019/03/zecabraq.jpg",
     },
     7: {
       id: 7,
@@ -61,7 +64,8 @@ export const initialState = {
       city: "New York",
       nationality: "American",
       email: "dmcaagent@wmg.com7789",
-      photo: "",
+      photo:
+        "https://nftnow.com/wp-content/uploads/2022/01/Melanie-Martinez-scaled.jpg",
     },
     8: {
       id: 8,
@@ -70,7 +74,8 @@ export const initialState = {
       city: "Stavanger",
       nationality: "Norwegian",
       email: "aurora@gmail.com",
-      photo: "",
+      photo:
+        "https://www.rockenseine.com/en/wp-content/uploads/sites/2/2021/10/aurora-1.jpg",
     },
     9: {
       id: 9,
@@ -79,7 +84,8 @@ export const initialState = {
       city: "New York City",
       nationality: "American",
       email: "loveleo@gmail.com",
-      photo: "",
+      photo:
+        "https://dazedimg-dazedgroup.netdna-ssl.com/974/azure/dazed-prod/1290/0/1290554.jpg",
     },
     10: {
       id: 10,
@@ -88,7 +94,8 @@ export const initialState = {
       city: "Los Angeles",
       nationality: "American",
       email: "doja@gmail.com",
-      photo: "",
+      photo:
+        "https://www.the-sun.com/wp-content/uploads/sites/6/2021/07/378f890f-c3c4-4670-ba5c-f9443c9fbeea.jpg",
     },
     11: {
       id: 11,
@@ -97,7 +104,8 @@ export const initialState = {
       city: "Vancouver",
       nationality: "Canadian",
       email: "bbno@gmail.com",
-      photo: "",
+      photo:
+        "https://publish.one37pm.net/wp-content/uploads/2019/09/bbnos-mobile.jpg",
     },
     12: {
       id: 12,
@@ -106,7 +114,8 @@ export const initialState = {
       city: "New York",
       nationality: "American",
       email: "desrocs@gmail.com",
-      photo: "",
+      photo:
+        "https://i0.wp.com/lalloyd.com/wp-content/uploads/2021/02/Des_Rocs_2020.jpg?fit=1125%2C1500&ssl=1",
     },
     13: {
       id: 13,
@@ -115,7 +124,8 @@ export const initialState = {
       city: "Muskegon",
       nationality: "American",
       email: "borns@gmail.com",
-      photo: "",
+      photo:
+        "https://editorial01.shutterstock.com/preview-440/9794860ag/156b63a4/Shutterstock_9794860ag.jpg",
     },
     14: {
       id: 14,
@@ -124,17 +134,18 @@ export const initialState = {
       city: "Los Angeles",
       nationality: "American",
       email: "seb@gmail.com",
-      photo: "",
+      photo:
+        "https://cdn2.thelineofbestfit.com/images/made/images/remote/https_cdn2.thelineofbestfit.com/media/2014/SEB_TDLM_main_1290_1292.JPG",
     },
-    songs: {
-      1: {
-        name: "Thousand Miles",
-        artistId: 2,
-        genre: "rap",
-        year: 2022,
-        album: "KIDS ARE GROWING UP",
-        albumArt: "https://i.imgur.com/XqQXKZY.jpg",
-      },
+  },
+  songs: {
+    1: {
+      name: "Thousand Miles",
+      artistId: 2,
+      genre: "rap",
+      year: 2022,
+      album: "KIDS ARE GROWING UP",
+      albumArt: "https://i.imgur.com/XqQXKZY.jpg",
     },
   },
   genre: ["rock", "pop", "samba", "fado", "corridinho", "rap"],
