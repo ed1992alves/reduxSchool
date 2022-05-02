@@ -7,8 +7,8 @@ import "./SongsPage.scss";
 const SongsPage = () => {
   const artists = useSelector((state) => state.artists);
   const songs = useSelector((state) => state.artists.songs);
-  console.log(Object.values(artists))
 
+  
   const findArtistName = (id) => {
     return Object.values(artists).map((artist) => {
       if (artist.id === id && artist.id != undefined) {
