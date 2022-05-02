@@ -1,8 +1,70 @@
-.songsPage-container{
+.songsPage-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+
+  .list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    padding: 20px 20px 20px 20px;
+
+    .song {
+      display: flex;
+      flex-direction: row;
+      padding: 5px 10px 5px 10px;
+      margin-top: 5px;
+      border-radius: 3px;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: #909090ae;
+        .id {
+          color: black;
+        }
+      }
+
+      .id {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px 0 10px;
+        width: 30px;
+        font-size: 18px;
+      }
+      .img {
+        margin: 0px 20px;
+        height: 70px;
+      }
+
+      .name-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .name-artist {
+          width: 170px;
+          font-weight: bold;
+        }
+
+        .name-music {
+          color: lightgray;
+        }
+      }
+      .album {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 170px;
+      }
+      .year {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 170px;
+        align-items: center;
+      }
+    }
+  }
 }
