@@ -7,19 +7,15 @@ import "./SongsPage.scss";
 const SongsPage = () => {
   const artists = useSelector((state) => state.artists);
   const songs = useSelector((state) => state.artists.songs);
+  console.log(Object.values(artists))
 
   const findArtistName = (id) => {
-    const names = Object.values(artists).map((artist) => {
-      if (artist.id === id) {
-        console.log(artist.name);
-        return artist.name;
+    return Object.values(artists).map((artist) => {
+      if (artist.id === id && artist.id != undefined) {
+        return  artist.name;
       }
     });
-    return names.filter((name) => name !== undefined)[0];
   };
-
-  console.log(artists);
-  console.log(songs);
 
   return (
     <div className="songsPage-container">
