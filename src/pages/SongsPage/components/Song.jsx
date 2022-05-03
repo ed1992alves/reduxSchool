@@ -2,10 +2,12 @@ import './style.scss';
 import React, { useState } from 'react';
 import { BsPlayFill } from "react-icons/bs";
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Song = ({song, id}) =>{
 
+    const navigate = useNavigate();
     const [showPlay, setShowPlay] = useState(false);    
     const artists = useSelector((state) => state.artists);
 
@@ -20,8 +22,8 @@ export const Song = ({song, id}) =>{
     return(
         <div className="song" onMouseLeave={()=> setShowPlay(false)} onMouseOver={() => setShowPlay(true)}>
         <div className="id">{showPlay ? <BsPlayFill size={25} /> : id}</div>
-        <div className="img">
-          <img src={song.albumArt} width="70px" height="70px" />
+        <div onClick={() => navigate(`/songs/${id}`)} className="img">
+          <img  src={song.albumArt} width="70px" height="70px" />
         </div>
         <div className="name-info">
           <div className="name-artist">
@@ -37,6 +39,7 @@ export const Song = ({song, id}) =>{
         <div className="year">
           <p>{song.year}</p>
         </div>
+        
       </div>
     );
 }

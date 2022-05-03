@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-
 import "./SongsPage.scss";
-import { Song } from "./components/Song";
+import { Song } from "../components/Song";
 
 const SongsPage = () => {
 
