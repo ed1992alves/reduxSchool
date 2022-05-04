@@ -12,13 +12,10 @@ const ArtistPage = () => {
   const [artist, setArtist] = useState(artists[id]);
 
   const songs = useSelector((state) => state.songs);
-  const [artistSongs, setArtistSongs] = useState([]);
-  useLayoutEffect(() => {
-    /* esta lógica devia estar num selector */
-    setArtistSongs(Object.values(songs).filter((song) => song.artistId === artist.id))
-    }, [artist]);
+  const [artistSongs, setArtistSongs] = useState(
+    Object.values(songs).filter((song) => song.artistId === artist.id)
+  );
 
-  console.log(artistSongs)
   return (
     <div className="artistPage-container">
       <div className="artistPage-container">
@@ -34,8 +31,8 @@ const ArtistPage = () => {
         <div className="artistPage-song">
           {artistSongs.map((song) => {
             return (
-              <div className="song" key={song.id}> 
-              {/* // colocar clicavel */}
+              <div className="song" key={song.id}>
+                {/* // colocar clicavel */}
                 <img src={song.albumArt} alt={song.title}></img>
                 <span>{song.name}</span>
                 <span>{song.album}</span>
