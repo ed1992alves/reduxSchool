@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ArtistsPage from "./pages/ArtistsPage/ArtistsPage";
 import "./index.scss";
 import SongsPage from "./pages/SongsPage/SongsPage/SongsPage.jsx";
-import ArtistPage from "./pages/ArtistPage";
+import ArtistPage from "./pages/ArtistPage/ArtistPage.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
