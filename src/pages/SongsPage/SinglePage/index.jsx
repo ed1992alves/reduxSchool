@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 export const SinglePage = () => {
-  const songs = useSelector((state) => state.artists.songs);
+  const songs = useSelector((state) => state.songs);
   const { id } = useParams();
 
   const data = Object.entries(songs).find(([keys, values]) => id === keys)[1];

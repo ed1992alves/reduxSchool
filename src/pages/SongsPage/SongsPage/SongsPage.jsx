@@ -6,7 +6,7 @@ import { Song } from "../components/Song";
 const SongsPage = () => {
 
  
-  const songs = useSelector((state) => state.artists.songs);
+  const songs = useSelector((state) => state.songs);
  
   return (
     <div className="songsPage-container">
