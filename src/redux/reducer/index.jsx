@@ -1,14 +1,12 @@
-import {initialState} from "./initialState"
+import { initialState } from "./initialState";
 
-function employeeReducer(state = initialState, action) {
+function youSongReducer(state = initialState, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
 
-    switch(action.type) {
-        default: 
-        return state;
-    }
-
-    return state; 
-
+  return state;
 }
 
-export default employeeReducer;
+export default youSongReducer;

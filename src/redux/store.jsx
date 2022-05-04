@@ -1,6 +1,6 @@
-import { createStore } from 'redux';
-import employeeReducer from './reducer'
+import youSongReducer from './reducer'
+import { createStore } from 'redux'
 
-const store = createStore(employeeReducer)
+const store = createStore(youSongReducer)
 
-export default store; 
+export default store;
