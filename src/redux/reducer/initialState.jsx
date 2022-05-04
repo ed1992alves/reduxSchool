@@ -187,7 +187,7 @@ export const initialState = {
     },
     6: {
       name: "Pacify Her",
-      artistId: 6,
+      artistId: 2,
       genre: "pop",
       year: 2015,
       album: "Cry Baby",
@@ -266,7 +266,7 @@ export const initialState = {
     },
     15: {
       name: "Violin",
-      artistId: 15,
+      artistId: 14,
       genre: "rock",
       year: 2010,
       album: "Violin Release",
@@ -298,7 +298,7 @@ export const initialState = {
     },
     19: {
       name: "Ferrinhos",
-      artistId: 19,
+      artistId: 14,
       genre: "rock",
       year: 2020,
       album: "Ferrinhos Release",
@@ -306,7 +306,7 @@ export const initialState = {
     },
     20: {
       name: "Guitarra",
-      artistId: 20,
+      artistId: 14,
       genre: "rock",
       year: 2100,
       album: "Guitarra Release",

@@ -4,7 +4,6 @@ import "./SongsPage.scss";
 import { Song } from "../components/Song";
 
 const SongsPage = () => {
-
  
   const songs = useSelector((state) => state.songs);
  

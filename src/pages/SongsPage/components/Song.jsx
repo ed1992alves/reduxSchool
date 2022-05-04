@@ -23,7 +23,7 @@ export const Song = ({song, id}) =>{
         <div className="song" onMouseLeave={()=> setShowPlay(false)} onMouseOver={() => setShowPlay(true)}>
         <div className="id">{showPlay ? <BsPlayFill size={25} /> : id}</div>
         <div onClick={() => navigate(`/songs/${id}`)} className="img">
-          <img  src={song.albumArt} width="70px" height="70px" />
+          <img src={song.albumArt} width="70px" height="70px" />
         </div>
         <div className="name-info">
           <div className="name-artist">
