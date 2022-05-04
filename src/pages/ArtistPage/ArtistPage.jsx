@@ -33,9 +33,9 @@ const ArtistPage = () => {
         </div>
         <div className="artistPage-song">
           {artistSongs.map((song) => {
-            console.log(song);
             return (
-              <div className="song" key={song.id}>
+              <div className="song" key={song.id}> 
+              {/* // colocar clicavel */}
                 <img src={song.albumArt} alt={song.title}></img>
                 <span>{song.name}</span>
                 <span>{song.album}</span>
