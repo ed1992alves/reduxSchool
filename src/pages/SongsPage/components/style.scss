@@ -1,0 +1,8 @@
+.name-artist-link{
+    all: unset;
+
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

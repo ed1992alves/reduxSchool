@@ -1,8 +1,72 @@
-.single-page{
-height:  100vh;
-background-position: center;
-background-size:100% 100%;
+.single-page {
+  height: calc(100vh - 86px);
+  background-position: center;
+  background-size: 100% 100%;
 
-resize: both;
-background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$bright-color: #fff;
+@mixin bottom {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.container {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 350px;
+  height: 500px;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+
+  .container__info {
+    @include bottom;
+    bottom: 20%;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 30px;
+    color: $bright-color;
+    span {
+      margin-right: 20px;
+    }
+    i {
+      margin-right: 10px;
+    }
+  }
+  .container__profile {
+    background-color: #e4f2fd;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    @include bottom();
+    bottom: 0;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-position: center;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    h2 {
+      color: #334454;
+      font-size: 1.2rem;
+    }
+    p {
+      color: #a1b2bc;
+      font-size: 0.8rem;
+    }
+    p b {
+      font-style: italic;
+    }
+    .artist-name-by {
+      font-size: 15px;
+      color: #334454;
+    }
+  }
 }
