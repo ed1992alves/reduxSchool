@@ -199,7 +199,7 @@ export const initialState = {
     },
     6: {
       name: "Pacify Her",
-      artistId: 2,
+      artistId: 3,
       genre: "pop",
       year: 2015,
       album: "Cry Baby",
