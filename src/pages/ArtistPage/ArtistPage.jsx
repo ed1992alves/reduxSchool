@@ -2,27 +2,23 @@ import { useParams } from "react-router-dom";
 import React, { useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./ArtistPage.scss";
+import { useState } from "react";
 
 const ArtistPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
   const artists = useSelector((state) => state.artists);
-  const [artist, setArtist] = React.useState(artists[id]);
+  const [artist, setArtist] = useState(artists[id]);
 
   const songs = useSelector((state) => state.songs);
-  const artistSongs = [];
+  const [artistSongs, setArtistSongs] = useState([]);
   useLayoutEffect(() => {
-    Object.values(songs).map((song) => {
-      if (song.artistId === artist.id) {
-        artistSongs.push(song);
-      }
-    });
-  }, [artist]);
+    /* esta lógica devia estar num selector */
+    setArtistSongs(Object.values(songs).filter((song) => song.artistId === artist.id))
+    }, [artist]);
 
-  console.log(artistSongs);
-  console.log(artist);
-
+  console.log(artistSongs)
   return (
     <div className="artistPage-container">
       <div className="artistPage-container">
@@ -38,6 +34,15 @@ const ArtistPage = () => {
         <div className="artistPage-song">
           {artistSongs.map((song) => {
             console.log(song);
+            return (
+              <div className="song" key={song.id}>
+                <img src={song.albumArt} alt={song.title}></img>
+                <span>{song.name}</span>
+                <span>{song.album}</span>
+                <span>{song.genre}</span>
+                <span>{song.year}</span>
+              </div>
+            );
           })}
         </div>
       </div>
