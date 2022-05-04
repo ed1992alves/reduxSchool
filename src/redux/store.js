@@ -1,5 +1,5 @@
 import employeeReducer from './reducer'
-import {applyMiddleware } from "redux";
+import {applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 
 const store = createStore(employeeReducer, applyMiddleware(thunk))

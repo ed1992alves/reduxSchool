@@ -14,6 +14,22 @@ const Dropdown = ({text, setOption, options}) => {
         setOption(val);
         scaleDropdownList();
     }
+
+    return (
+        <>
+        <div>{text}</div>
+        <button className="dropdown-button" onClick={() => {scaleDropdownList()}}>
+            {value}
+        </button>
+        <div className="dropdown-list" scale={scale}>
+            {options.map((el) => 
+                <button key={el} active={el === value} onClick={() => handleClick(el)}>
+                    {el}
+                </button>
+            )}
+        </div>    
+        </>
+    )
 }
 
 
