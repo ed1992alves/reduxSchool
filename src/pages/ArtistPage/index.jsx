@@ -3,21 +3,12 @@ import "./style.scss";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-export const ArtistPage = () => {
+const ArtistPage = () => {
   const songs = useSelector((state) => state.songs);
   const { id } = useParams();
 
   const data = Object.entries(songs).find(([keys, values]) => id === keys)[1];
 
-  /* 
-  name: "Flute",
-        artistId: 16,
-        genre: "rock",
-        year: 2001,
-        album: "Flute Release",
-        albumArt: "https://i.imgur.com/XqQXKZY.jpg",
-
-*/
   return (
     <div
       className="single-page"
@@ -33,3 +24,5 @@ export const ArtistPage = () => {
     </div>
   );
 };
+
+export default ArtistPage;

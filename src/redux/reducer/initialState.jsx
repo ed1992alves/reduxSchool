@@ -9,6 +9,7 @@ export const initialState = {
       email: "quimquimquimdasirene.com",
       photo:
         "https://cdn.discordapp.com/attachments/968923738911428689/970636094959935528/unknown.png",
+      genre: ["folklore", "portuguese popular music"],
     },
     2: {
       id: 2,
@@ -18,6 +19,7 @@ export const initialState = {
       nationality: "Australian",
       email: "support@bookingagentinfo.com",
       photo: "https://i.redd.it/qujx8lebnfk81.jpg",
+      genre: ["pop", "hip-hop", "r&b", "emo rap", "pop-rap"],
     },
     3: {
       id: 3,
@@ -28,15 +30,17 @@ export const initialState = {
       email: "support@bookingagentinfo.com",
       photo:
         "https://scontent.flis12-1.fna.fbcdn.net/v/t39.30808-6/267446542_912162542818121_8243145234345412369_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=2pO0jo1lc-QAX_e5DWP&tn=-iNt1fX-N60_5woT&_nc_ht=scontent.flis12-1.fna&oh=00_AT-kygwM0TWGCmznnLeSCqi22uY_o2xtJapP88gihRA8vA&oe=6274C276",
+      genre: ["folklore", "portuguese popular music"],
     },
     4: {
       id: 4,
-      name: "Manel das Nespras",
+      name: "Manel",
       age: 40,
       city: "Coimbra",
       nationality: "Portuguese",
       email: "xxx@xxx.xxx",
       photo: "http://www.syncsongs.pt/wp-content/uploads/2018/05/emanuel.jpg",
+      genre: ["folklore", "portuguese popular music"],
     },
     5: {
       id: 5,
@@ -47,6 +51,7 @@ export const initialState = {
       email: "parra@hotmail.com",
       photo:
         "https://cdn.discordapp.com/attachments/968923738911428689/970636879298977842/IMG20211029142551.jpeg",
+      genre: ["folklore", "portuguese popular music", "trap-tuga"],
     },
     6: {
       id: 6,
@@ -56,6 +61,7 @@ export const initialState = {
       nationality: "Portuguese",
       email: "9277@gmail.com89203",
       photo: "https://www.tv7dias.pt/wp-content/uploads/2019/03/zecabraq.jpg",
+      genre: ["folklore", "portuguese popular music"],
     },
     7: {
       id: 7,
@@ -66,6 +72,7 @@ export const initialState = {
       email: "dmcaagent@wmg.com7789",
       photo:
         "https://nftnow.com/wp-content/uploads/2022/01/Melanie-Martinez-scaled.jpg",
+      genre: ["pop", "indie pop", "alternative pop"],
     },
     8: {
       id: 8,
@@ -76,6 +83,7 @@ export const initialState = {
       email: "aurora@gmail.com",
       photo:
         "https://www.rockenseine.com/en/wp-content/uploads/sites/2/2021/10/aurora-1.jpg",
+      genre: ["indie pop", "alternative pop", "indie rock"],
     },
     9: {
       id: 9,
@@ -86,6 +94,7 @@ export const initialState = {
       email: "loveleo@gmail.com",
       photo:
         "https://dazedimg-dazedgroup.netdna-ssl.com/974/azure/dazed-prod/1290/0/1290554.jpg",
+      genre: ["pop"],
     },
     10: {
       id: 10,
@@ -96,6 +105,7 @@ export const initialState = {
       email: "doja@gmail.com",
       photo:
         "https://www.the-sun.com/wp-content/uploads/sites/6/2021/07/378f890f-c3c4-4670-ba5c-f9443c9fbeea.jpg",
+      genre: ["pop", "r&b", "hip-hop", "pop-rap"],
     },
     11: {
       id: 11,
@@ -106,6 +116,7 @@ export const initialState = {
       email: "bbno@gmail.com",
       photo:
         "https://publish.one37pm.net/wp-content/uploads/2019/09/bbnos-mobile.jpg",
+      genre: ["hip-hop", "r&b"],
     },
     12: {
       id: 12,
@@ -116,6 +127,7 @@ export const initialState = {
       email: "desrocs@gmail.com",
       photo:
         "https://i0.wp.com/lalloyd.com/wp-content/uploads/2021/02/Des_Rocs_2020.jpg?fit=1125%2C1500&ssl=1",
+      genre: ["rock", "hard rock", "alternative rock"],
     },
     13: {
       id: 13,
@@ -126,6 +138,7 @@ export const initialState = {
       email: "borns@gmail.com",
       photo:
         "https://editorial01.shutterstock.com/preview-440/9794860ag/156b63a4/Shutterstock_9794860ag.jpg",
+      genre: ["indie pop", "glam rock"],
     },
     14: {
       id: 14,
@@ -136,9 +149,8 @@ export const initialState = {
       email: "seb@gmail.com",
       photo:
         "https://cdn2.thelineofbestfit.com/images/made/images/remote/https_cdn2.thelineofbestfit.com/media/2014/SEB_TDLM_main_1290_1292.JPG",
+      genre: ["indie pop"],
     },
-
- 
   },
   songs: {
     1: {
@@ -254,7 +266,8 @@ export const initialState = {
       genre: "hiphop",
       year: 2021,
       album: "god of the sunsets",
-      albumArt: "https://64.media.tumblr.com/9e9b60f390cd41c35639ad6e05f140ba/d8ae3044c56638c0-de/s540x810/b714c87227f8c3cb6514533a6ee0c4fbb4684771.png",
+      albumArt:
+        "https://64.media.tumblr.com/9e9b60f390cd41c35639ad6e05f140ba/d8ae3044c56638c0-de/s540x810/b714c87227f8c3cb6514533a6ee0c4fbb4684771.png",
     },
     14: {
       name: "Piano",
