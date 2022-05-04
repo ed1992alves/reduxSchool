@@ -3,7 +3,7 @@ import "./style.scss";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-export const ArtistPage = () => {
+const ArtistPage = () => {
   const songs = useSelector((state) => state.songs);
   const { id } = useParams();
 
@@ -33,3 +33,5 @@ export const ArtistPage = () => {
     </div>
   );
 };
+
+export default ArtistPage;
