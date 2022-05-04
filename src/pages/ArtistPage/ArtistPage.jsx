@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import React, { useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./ArtistPage.scss";
@@ -7,13 +7,13 @@ import { useState } from "react";
 const ArtistPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const artists = useSelector((state) => state.artists);
   const [artist, setArtist] = useState(artists[id]);
 
   const songs = useSelector((state) => state.songs);
   const [artistSongs, setArtistSongs] = useState(
-    Object.values(songs).filter((song) => song.artistId === artist.id)
+    Object.entries(songs).filter(([key, song]) => song.artistId === artist.id)
   );
 
   return (
@@ -30,14 +30,18 @@ const ArtistPage = () => {
         </div>
         <div className="artistPage-song">
           {artistSongs.map((song) => {
+            console.log(song)
             return (
-              <div className="song" key={song.id}>
-                {/* // colocar clicavel */}
-                <img src={song.albumArt} alt={song.title}></img>
-                <span>{song.name}</span>
-                <span>{song.album}</span>
-                <span>{song.genre}</span>
-                <span>{song.year}</span>
+              <div
+                className="song"
+                key={song.id}
+                onClick={() => navigate(`/songs/${song[0]}`)}
+              >
+                <img src={song[1].albumArt} alt={song[1].title}></img>
+                <span>{song[1].name}</span>
+                <span>{song[1].album}</span>
+                <span>{song[1].genre}</span>
+                <span>{song[1].year}</span>
               </div>
             );
           })}

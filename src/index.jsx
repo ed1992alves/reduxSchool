@@ -13,8 +13,9 @@ ReactDOM.render(
       <Route path="/" element={<App />}>
         <Route index element={<ArtistsPage />} />
         <Route path="/songs" element={<SongsPage />} />
-        <Route path="/songs/:id" element={<ArtistPage />} />
-        <Route path="*" element={<Navigate to={"/"} />} />
+        <Route path="/artists" element={<ArtistsPage />} />
+        <Route path="/artist/:id" element={<ArtistPage />} />
+        {/* <Route path="*" element={<Navigate to={"/"} />} /> */}
       </Route>
     </Routes>
   </BrowserRouter>,
