@@ -1,7 +1,7 @@
 import { initialState } from "./initialState";
 
 function youSongReducer(state = initialState, action) {
-  switch (action.type) {
+  switch (action.type) {    
     default:
       return state;
   }
