@@ -10,7 +10,7 @@ const ArtistCard = ({ artist }) => {
       className="artist-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => { navigate(`/songs/${artist.id}`) }}
+      onClick={() => { navigate(`/artist/${artist.id}`) }}
     >
       <div className="artist-card-img">
         <img src={artist.photo} alt="artist" />
