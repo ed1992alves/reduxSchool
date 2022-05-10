@@ -156,7 +156,7 @@ export const initialState = {
       name: "Jaquim Manel",
       age: 48,
       city: "Matosinhos City",
-      nationality: "portugais",
+      nationality: "Portuguese",
       email: "jaquimmanel123@gmail.com",
       photo:
         "https://cdn.discordapp.com/attachments/968923738911428689/973599831199203349/unknown.png",
