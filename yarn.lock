@@ -5132,6 +5132,11 @@ react-dom@^16.8.0:
     prop-types "^15.6.2"
     scheduler "^0.19.0"
 
+react-hooks-useform@^0.1.86:
+  version "0.1.86"
+  resolved "https://registry.yarnpkg.com/react-hooks-useform/-/react-hooks-useform-0.1.86.tgz#82831cdacd40950f0197fa0dcd16b636dafb1036"
+  integrity sha512-peRWj1GMjnL1AdhBtVcF1pmgZXFjFn0sTI7+SlNOxSb5w9zB3NbkjVYIZZMQ8lt0ior2SeCAW+LgNMxHCsXPKQ==
+
 react-hot-loader@^4.3.11:
   version "4.12.19"
   resolved "https://registry.npmjs.org/react-hot-loader/-/react-hot-loader-4.12.19.tgz"
