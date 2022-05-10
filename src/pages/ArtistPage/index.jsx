@@ -9,15 +9,6 @@ const ArtistPage = () => {
 
   const data = Object.entries(songs).find(([keys, values]) => id === keys)[1];
 
-  /* 
-  name: "Flute",
-        artistId: 16,
-        genre: "rock",
-        year: 2001,
-        album: "Flute Release",
-        albumArt: "https://i.imgur.com/XqQXKZY.jpg",
-
-*/
   return (
     <div
       className="single-page"

@@ -1,0 +1,62 @@
+.artistPage-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 25px;
+
+  .artistPage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    width: 600px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .artistPage-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 650px;
+
+    .artistPage-bio {
+      text-align: right;
+      font-size: 30px;
+
+      h1 {
+        font-size: 50px;
+      }
+    }
+
+    .song {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid white;
+      margin: 10px 0;
+
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+
+      span {
+        font-size: 20px;
+        margin: 20px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
