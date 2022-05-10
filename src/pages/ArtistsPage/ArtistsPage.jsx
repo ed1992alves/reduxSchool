@@ -7,7 +7,23 @@ import DropdownContainer from "../../components/DropdownContainer/index";
 const ArtistsPage = () => {
   const dispatch = useDispatch();
   const artists = useSelector((state) => state.artists);
-  const [options] = useState(["HC Sirene Bombs", "Rap", "Reggae", "Funk"]);
+  const [options] = useState([
+    "folklore",
+    "portuguese popular music",
+    "pop",
+    "hip-hop",
+    "r&b",
+    "emo rap",
+    "pop-rap",
+    "trap-tuga",
+    "indie pop",
+    "alternative pop",
+    "indie rock",
+    "rock",
+    "hard rock",
+    "alternative rock",
+    "glam rock",
+  ]);
     
   return (
     <div className="artists-page-container">
