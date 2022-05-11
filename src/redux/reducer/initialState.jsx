@@ -345,5 +345,5 @@ export const initialState = {
       albumArt: "https://cdn.discordapp.com/attachments/968923738911428689/973598574707351552/unknown.png"
     }
   },
-  genre: ["rock", "pop", "samba", "fado", "corridinho", "rap"],
+  currrentGenre: "all",
 };

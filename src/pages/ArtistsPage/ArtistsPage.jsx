@@ -3,11 +3,16 @@ import "./ArtistsPage.scss";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import { useDispatch, useSelector } from "react-redux";
 import DropdownContainer from "../../components/DropdownContainer/index";
+import { currentGenre } from "../../redux/reducer/selectors";
 
 const ArtistsPage = () => {
-  const dispatch = useDispatch();
   const artists = useSelector((state) => state.artists);
+  const selectedGenre = useSelector(currentGenre);
+  const filtered = Object.values(artists).filter((el) =>
+    el.genre.includes(selectedGenre)
+  );
   const [options] = useState([
+    "all",
     "folklore",
     "portuguese popular music",
     "pop",
@@ -24,13 +29,18 @@ const ArtistsPage = () => {
     "alternative rock",
     "glam rock",
   ]);
-    
+
+  
+
   return (
     <div className="artists-page-container">
       <h1>Artists</h1>
+      {console.log(selectedGenre)}
       <DropdownContainer options={options} />
       <div className="artists-container">
-        {Object.values(artists).map((artist) => {
+        {Object.values(
+          (selectedGenre !== undefined) ? (selectedGenre !==  "all") ? filtered : artists : artists
+        ).map((artist) => {
           return <ArtistCard key={artist.id} artist={artist} />;
         })}
       </div>

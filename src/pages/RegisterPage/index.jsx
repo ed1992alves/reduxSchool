@@ -1,9 +1,12 @@
-import React, { useRef } from "react";
-import { useNavigate } from "react-router";
+import React, { useRef, useEffect } from "react";
 import AjustableForm from "../../components/AjustableForm/index";
+import { useDispatch } from "react-redux";
 
 const RegisterPage = () => {
-  const nameRef = useRef({ value: "" });
+  const dispatch = useDispatch();
+
+  const artistNameRef = useRef({ value: "" });
+  const ageRef = useRef({ value: "" });
   const emailRef = useRef({ value: "" });
   const cityRef = useRef({ value: "" });
   const nationalityRef = useRef({ value: "" });
@@ -12,7 +15,7 @@ const RegisterPage = () => {
   const folkloreRef = useRef({ value: "" });
   const ppmRef = useRef({ value: "" });
   const popRef = useRef({ value: "" });
-  const hiphopRef = useRef({ value: "" });
+  const hipHopRef = useRef({ value: "" });
   const randbRef = useRef({ value: "" });
   const emoRapRef = useRef({ value: "" });
   const popRapRef = useRef({ value: "" });
@@ -26,62 +29,11 @@ const RegisterPage = () => {
   const glamRockRef = useRef({ value: "" });
   const hardcoreSireneDosBombeirosRef = useRef({ value: "" });
 
-  let name;
-  let email;
-  let city;
-  let nationality;
-  let photo;
-
-  let isFolklore;
-  let isPPM;
-  let isPop;
-  let isHipHop;
-  let isRnB;
-  let isEmoRap;
-  let isPopRap;
-  let isTrapTuga;
-  let isIndiePop;
-  let isAlternativePop;
-  let isIndieRock;
-  let isRock;
-  let isHardRock;
-  let isAlternativeRock;
-  let isGlamRock;
-  let isHardcoreSireneDosBombeiros;
-
-  useEffect(() => {
-    name = nameRef.current.value;
-    email = emailRef.current.value;
-    city = cityRef.current.value;
-    nationality = nationalityRef.current.value;
-    photo = photoRef.current.value;
-
-    isFolklore = folkloreRef.current.checked;
-    isPPM = ppmRef.current.checked;
-    isPop = popRef.current.checked;
-    isHipHop = hiphopRef.current.checked;
-    isRnB = randbRef.current.checked;
-    isEmoRap = emoRapRef.current.checked;
-    isPopRap = popRapRef.current.checked;
-    isTrapTuga = trapTugaRef.current.checked;
-    isIndiePop = indiePopRef.current.checked;
-    isAlternativePop = alternativePopRef.current.checked;
-    isIndieRock = indieRockRef.current.checked;
-    isRock = rockRef.current.checked;
-    isHardRock = hardRockRef.current.checked;
-    isAlternativeRock = alternativeRockRef.current.checked;
-    isGlamRock = glamRockRef.current.checked;
-    isHardcoreSireneDosBombeiros =
-      hardcoreSireneDosBombeirosRef.current.checked;
-  }, [
-    nameRef,
-    emailRef,
-    cityRef,
-    nationalityRef,
+  const genres = [
     folkloreRef,
     ppmRef,
     popRef,
-    hiphopRef,
+    hipHopRef,
     randbRef,
     emoRapRef,
     popRapRef,
@@ -89,10 +41,28 @@ const RegisterPage = () => {
     indiePopRef,
     alternativePopRef,
     indieRockRef,
-  ]);
+    rockRef,
+    hardRockRef,
+    alternativeRockRef,
+    glamRockRef,
+    hardcoreSireneDosBombeirosRef,
+  ];
 
   const handleClick = () => {
-    console.log(isHardcoreSireneDosBombeiros);
+    let genre = [];
+    genres.forEach((el) => {
+      el.current.checked && genre.push(el.current.name);
+    });
+    let newArtist = {};
+    newArtist.name = artistNameRef.current.value;
+    newArtist.age = ageRef.current.value;
+    newArtist.city = cityRef.current.value;
+    newArtist.nationality = nationalityRef.current.value;
+    newArtist.email = emailRef.current.value;
+    newArtist.photo = photoRef.current.value;
+    newArtist.genre = genre;
+    console.log(newArtist);
+    dispatch({ type: "SET_NEW_ARTIST", newArtist });
   };
 
   return (
@@ -100,7 +70,8 @@ const RegisterPage = () => {
       <div>
         <AjustableForm
           fields={[
-            { text: "Name", type: "text", ref: nameRef },
+            { text: "Artist Name", type: "text", ref: artistNameRef },
+            { text: "Age", type: "number", ref: ageRef },
             { text: "Email", type: "text", ref: emailRef },
             { text: "City", type: "text", ref: cityRef },
             { text: "Nationality", type: "text", ref: nationalityRef },
@@ -110,7 +81,7 @@ const RegisterPage = () => {
             { text: "folklore", ref: folkloreRef },
             { text: "portuguese popular music", ref: ppmRef },
             { text: "pop", ref: popRef },
-            { text: "hip-hop", ref: hiphopRef },
+            { text: "hip-hop", ref: hipHopRef },
             { text: "r&b", ref: randbRef },
             { text: "emo rap", ref: emoRapRef },
             { text: "pop-rap", ref: popRapRef },
