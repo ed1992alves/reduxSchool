@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import AjustableForm from "../../components/AjustableForm/index";
 import { useDispatch } from "react-redux";
+import "./index.scss";
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -67,42 +68,40 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <div>
-        <AjustableForm
-          fields={[
-            { text: "Artist Name", type: "text", ref: artistNameRef },
-            { text: "Age", type: "number", ref: ageRef },
-            { text: "Email", type: "text", ref: emailRef },
-            { text: "City", type: "text", ref: cityRef },
-            { text: "Nationality", type: "text", ref: nationalityRef },
-            { text: "Photo URL", type: "text", ref: photoRef },
-          ]}
-          checkbox={[
-            { text: "folklore", ref: folkloreRef },
-            { text: "portuguese popular music", ref: ppmRef },
-            { text: "pop", ref: popRef },
-            { text: "hip-hop", ref: hipHopRef },
-            { text: "r&b", ref: randbRef },
-            { text: "emo rap", ref: emoRapRef },
-            { text: "pop-rap", ref: popRapRef },
-            { text: "trap-tuga", ref: trapTugaRef },
-            { text: "indie pop", ref: indiePopRef },
-            { text: "alternative pop", ref: alternativePopRef },
-            { text: "indie rock", ref: indieRockRef },
-            { text: "rock", ref: rockRef },
-            { text: "hard rock", ref: hardRockRef },
-            { text: "alternative rock", ref: alternativeRockRef },
-            { text: "glam rock", ref: glamRockRef },
-            {
-              text: "hardcore sirene dos bombeiros",
-              ref: hardcoreSireneDosBombeirosRef,
-            },
-          ]}
-          handleClick={handleClick}
-          submitButtonText={"Submit Artist"}
-        />
-      </div>
+    <div className="register-container">
+      <AjustableForm
+        fields={[
+          { text: "Artist Name", type: "text", ref: artistNameRef },
+          { text: "Age", type: "number", ref: ageRef },
+          { text: "Email", type: "text", ref: emailRef },
+          { text: "City", type: "text", ref: cityRef },
+          { text: "Nationality", type: "text", ref: nationalityRef },
+          { text: "Photo URL", type: "text", ref: photoRef },
+        ]}
+        checkbox={[
+          { text: "folklore", ref: folkloreRef },
+          { text: "portuguese popular music", ref: ppmRef },
+          { text: "pop", ref: popRef },
+          { text: "hip-hop", ref: hipHopRef },
+          { text: "r&b", ref: randbRef },
+          { text: "emo rap", ref: emoRapRef },
+          { text: "pop-rap", ref: popRapRef },
+          { text: "trap-tuga", ref: trapTugaRef },
+          { text: "indie pop", ref: indiePopRef },
+          { text: "alternative pop", ref: alternativePopRef },
+          { text: "indie rock", ref: indieRockRef },
+          { text: "rock", ref: rockRef },
+          { text: "hard rock", ref: hardRockRef },
+          { text: "alternative rock", ref: alternativeRockRef },
+          { text: "glam rock", ref: glamRockRef },
+          {
+            text: "hardcore sirene dos bombeiros",
+            ref: hardcoreSireneDosBombeirosRef,
+          },
+        ]}
+        handleClick={handleClick}
+        submitButtonText={"Submit Artist"}
+      />
     </div>
   );
 };

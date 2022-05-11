@@ -1,28 +1,29 @@
 import React from "react";
-import { FormInput, FormButton } from "./form-styles";
+import "./index.scss";
 
 const AjustableForm = ({ fields, handleClick, checkbox, submitButtonText }) => {
   return (
-    <>
+    <div className="form-container">
       {fields.map((e) => (
-        <FormInput
+        <input
+          className="form-input"
           key={e + String(Math.random())}
           type={e.type}
           placeholder={e.text}
           ref={e.ref}
         />
       ))}
-      <div>
+      <div className="form-checkboxes">
         {checkbox.map((e) => (
-          <div key={e + String(Math.random())}>
-            <input type="checkbox" name={e.text} value={e.text} ref={e.ref}/>
+          <div key={e + String(Math.random())} className="checkbox">
+            <input type="checkbox" name={e.text} value={e.text} ref={e.ref} />
             <label htmlFor={e.text}>{e.text}</label>
-            <br/>
+            <br />
           </div>
         ))}
       </div>
-      <FormButton onClick={handleClick}>{submitButtonText}</FormButton>
-    </>
+      <button onClick={handleClick} className="form-buttom">{submitButtonText}</button>
+    </div>
   );
 };
 
