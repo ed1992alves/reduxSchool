@@ -2,16 +2,15 @@
 import { useSelector } from "react-redux";
 import "./SongsPage.scss";
 import { Song } from "../components/song/Song";
-import React from "react";
+import React, { useState } from "react";
+import { Modal } from "../components/modal";
 
 
 const SongsPage = () => {
 
- 
+  const [show, setShow] = useState(false);
   const songs = useSelector((state) => state.songs);
   
-
-
   
 
   return (
@@ -19,7 +18,7 @@ const SongsPage = () => {
       <div className="songsPage-container">
         <div className="add-song">
           <div className="add-song-text">
-            <button>Add Song</button>
+            <button onClick={() => setShow(true)}>Add Song</button>
           </div>
         </div>
         <div className="list">
@@ -28,7 +27,7 @@ const SongsPage = () => {
           })}
         </div>
       </div>
-
+      {show && <Modal show= {show} method={setShow}/>}
      
     </>
   );
