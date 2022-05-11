@@ -63,6 +63,7 @@ const RegisterPage = () => {
     newArtist.genre = genre;
     console.log(newArtist);
     dispatch({ type: "SET_NEW_ARTIST", newArtist });
+    alert("Artist created!");
   };
 
   return (

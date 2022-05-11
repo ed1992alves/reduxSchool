@@ -11,6 +11,7 @@ const Navbar = () => {
       <div className="navbar-links">
         <Link to="/">Artists</Link>
         <Link to="/songs">Songs</Link>
+        <Link to="/artist/register">Add Artist</Link>
       </div>
     </div>
   );
