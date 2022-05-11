@@ -9,7 +9,6 @@ export const initialState = {
       email: "quimquimquimdasirene.com",
       photo:
         "https://cdn.discordapp.com/attachments/968923738911428689/970636094959935528/unknown.png",
-      genre: ["folklore", "portuguese popular music"],
     },
     2: {
       id: 2,
@@ -19,7 +18,6 @@ export const initialState = {
       nationality: "Australian",
       email: "support@bookingagentinfo.com",
       photo: "https://i.redd.it/qujx8lebnfk81.jpg",
-      genre: ["pop", "hip-hop", "r&b", "emo rap", "pop-rap"],
     },
     3: {
       id: 3,
@@ -30,7 +28,6 @@ export const initialState = {
       email: "support@bookingagentinfo.com",
       photo:
         "https://scontent.flis12-1.fna.fbcdn.net/v/t39.30808-6/267446542_912162542818121_8243145234345412369_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=2pO0jo1lc-QAX_e5DWP&tn=-iNt1fX-N60_5woT&_nc_ht=scontent.flis12-1.fna&oh=00_AT-kygwM0TWGCmznnLeSCqi22uY_o2xtJapP88gihRA8vA&oe=6274C276",
-      genre: ["folklore", "portuguese popular music"],
     },
     4: {
       id: 4,
@@ -51,7 +48,6 @@ export const initialState = {
       email: "parra@hotmail.com",
       photo:
         "https://cdn.discordapp.com/attachments/968923738911428689/970636879298977842/IMG20211029142551.jpeg",
-      genre: ["folklore", "portuguese popular music", "trap-tuga"],
     },
     6: {
       id: 6,
@@ -61,7 +57,6 @@ export const initialState = {
       nationality: "Portuguese",
       email: "9277@gmail.com89203",
       photo: "https://www.tv7dias.pt/wp-content/uploads/2019/03/zecabraq.jpg",
-      genre: ["folklore", "portuguese popular music"],
     },
     7: {
       id: 7,
@@ -127,7 +122,6 @@ export const initialState = {
       email: "desrocs@gmail.com",
       photo:
         "https://i0.wp.com/lalloyd.com/wp-content/uploads/2021/02/Des_Rocs_2020.jpg?fit=1125%2C1500&ssl=1",
-      genre: ["rock", "hard rock", "alternative rock"],
     },
     13: {
       id: 13,
@@ -138,7 +132,6 @@ export const initialState = {
       email: "borns@gmail.com",
       photo:
         "https://editorial01.shutterstock.com/preview-440/9794860ag/156b63a4/Shutterstock_9794860ag.jpg",
-      genre: ["indie pop", "glam rock"],
     },
     14: {
       id: 14,
@@ -149,7 +142,6 @@ export const initialState = {
       email: "seb@gmail.com",
       photo:
         "https://cdn2.thelineofbestfit.com/images/made/images/remote/https_cdn2.thelineofbestfit.com/media/2014/SEB_TDLM_main_1290_1292.JPG",
-      genre: ["indie pop"],
     },
     15: {
       id: 15,
@@ -160,7 +152,6 @@ export const initialState = {
       email: "jaquimmanel123@gmail.com",
       photo:
         "https://cdn.discordapp.com/attachments/968923738911428689/973599831199203349/unknown.png",
-      genre: ["apita apitaaaa, apiiiiiiitaaa camelooo, camelinhoooo"],
     },
   },
   songs: {
