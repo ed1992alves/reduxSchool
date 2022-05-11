@@ -151,6 +151,17 @@ export const initialState = {
         "https://cdn2.thelineofbestfit.com/images/made/images/remote/https_cdn2.thelineofbestfit.com/media/2014/SEB_TDLM_main_1290_1292.JPG",
       genre: ["indie pop"],
     },
+    15: {
+      id: 15,
+      name: "Jaquim Manel",
+      age: 48,
+      city: "Matosinhos City",
+      nationality: "Portuguese",
+      email: "jaquimmanel123@gmail.com",
+      photo:
+        "https://cdn.discordapp.com/attachments/968923738911428689/973599831199203349/unknown.png",
+      genre: ["apita apitaaaa, apiiiiiiitaaa camelooo, camelinhoooo"],
+    },
   },
   songs: {
     1: {
@@ -325,6 +336,14 @@ export const initialState = {
       album: "Guitarra Release",
       albumArt: "https://i.imgur.com/XqQXKZY.jpg",
     },
+    21: {
+      name: "Apiiiiitaaa Camelo",
+      artistId: 15,
+      genre: "apitaaaaaa apitaaaa cameeelinhooo",
+      year: 2019,
+      album: "Final de Ano na RTP 1",
+      albumArt: "https://cdn.discordapp.com/attachments/968923738911428689/973598574707351552/unknown.png"
+    }
   },
   genre: ["rock", "pop", "samba", "fado", "corridinho", "rap"],
 };
