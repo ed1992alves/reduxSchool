@@ -6,6 +6,7 @@ import ArtistsPage from "./pages/ArtistsPage/ArtistsPage";
 import "./index.scss";
 import SongsPage from "./pages/SongsPage/SongsPage/SongsPage.jsx";
 import ArtistPage from "./pages/ArtistPage/ArtistPage.jsx";
+import RegisterPage from "./pages/RegisterPage/index"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route path="/songs" element={<SongsPage />} />
         <Route path="/artists" element={<ArtistsPage />} />
         <Route path="/artist/:id" element={<ArtistPage />} />
+        <Route path="/artist/register" element={<RegisterPage />} />
         {/* <Route path="*" element={<Navigate to={"/"} />} /> */}
       </Route>
     </Routes>
