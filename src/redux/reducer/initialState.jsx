@@ -26,7 +26,7 @@ export const initialState = {
       city: "Porto",
       nationality: "Portuguese",
       email: "support@bookingagentinfo.com",
-      photo: "https://upload.wikimedia.org/wikipedia/commons/2/27/Fotografia_oficial_do_Presidente_da_Rep%C3%BAblica_An%C3%ADbal_Cavaco_Silva.jpg",
+      photo: "https://upload.wikimedia.org/wikipedia/commons/2/27/Fotografia_oficial_do_Presidente_da_Rep%C3%BAblica_An%C3%ADbal_Cavaco_Silva.jpgjafoste",
     },
     4: {
       id: 4,

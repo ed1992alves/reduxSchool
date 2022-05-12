@@ -10,10 +10,19 @@ const ArtistCard = ({ artist }) => {
       className="artist-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => { navigate(`/artist/${artist.id}`) }}
+      onClick={() => {
+        navigate(`/artist/${artist.id}`);
+      }}
     >
       <div className="artist-card-img">
-        <img src={artist.photo} alt="artist" />
+        <img
+          src={artist.photo}
+          alt="artist"
+          onError={(e) =>
+            (e.currentTarget.src =
+              "https://i.scdn.co/image/ab6761610000e5eb601fb0059594d52f3f7939a9")
+          }
+        />
       </div>
       <div
         className={`artist-card-info-container ${
@@ -33,7 +42,6 @@ const ArtistCard = ({ artist }) => {
         <span>City: {artist.city}</span>
         <span>Nationality: {artist.nationality}</span>
         <span>Email: {artist.email}</span>
-
       </div>
     </div>
   );

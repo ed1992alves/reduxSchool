@@ -64,7 +64,6 @@ const RegisterPage = () => {
     newArtist.genre = genre;
     console.log(newArtist);
     dispatch({ type: "SET_NEW_ARTIST", newArtist });
-    alert("Artist created!");
   };
 
   return (
@@ -75,9 +74,9 @@ const RegisterPage = () => {
           { text: "Age", type: "number", ref: ageRef },
           { text: "Email", type: "text", ref: emailRef },
           { text: "City", type: "text", ref: cityRef },
-          { text: "Nationality", type: "text", ref: nationalityRef },
           { text: "Photo URL", type: "text", ref: photoRef },
         ]}
+        
         checkbox={[
           { text: "folklore", ref: folkloreRef },
           { text: "portuguese popular music", ref: ppmRef },

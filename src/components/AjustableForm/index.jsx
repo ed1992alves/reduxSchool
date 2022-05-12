@@ -1,5 +1,7 @@
 import React from "react";
 import "./index.scss";
+import NatDpdnCont from "../NatDpdnCont/index";
+import nationalitiesArr from "../../utils/nationalities";
 
 const AjustableForm = ({ fields, handleClick, checkbox, submitButtonText }) => {
   return (
@@ -13,6 +15,7 @@ const AjustableForm = ({ fields, handleClick, checkbox, submitButtonText }) => {
           ref={e.ref}
         />
       ))}
+      <NatDpdnCont options={nationalitiesArr}/>
       <div className="form-checkboxes">
         {checkbox.map((e) => (
           <div key={e + String(Math.random())} className="checkbox">
