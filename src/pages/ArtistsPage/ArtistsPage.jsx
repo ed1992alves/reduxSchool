@@ -7,39 +7,33 @@ import { currentGenre } from "../../redux/reducer/selectors";
 
 const ArtistsPage = () => {
   const artists = useSelector((state) => state.artists);
+  const songs = useSelector((state) => state.songs);
   const selectedGenre = useSelector(currentGenre);
-  const filtered = Object.values(artists).filter((el) =>
-    el.genre.includes(selectedGenre)
-  );
-  const [options] = useState([
-    "all",
-    "folklore",
-    "portuguese popular music",
-    "pop",
-    "hip-hop",
-    "r&b",
-    "emo rap",
-    "pop-rap",
-    "trap-tuga",
-    "indie pop",
-    "alternative pop",
-    "indie rock",
-    "rock",
-    "hard rock",
-    "alternative rock",
-    "glam rock",
-  ]);
 
-  
+  const genres = Array.from(
+    new Set(Object.values(songs).map((el) => el.genre))
+  );
+  genres.push("all");
+
+  function artistsBySelectedGenre() {
+    return Object.values(songs)
+      .filter((el) => el.genre === selectedGenre)
+      .map((el) => el.artistId);
+  }
+
+  const filtered = Object.values(artists).filter((el) =>
+    artistsBySelectedGenre().includes(el.id)
+  );
 
   return (
     <div className="artists-page-container">
       <h1>Artists</h1>
-      {console.log(selectedGenre)}
-      <DropdownContainer options={options} />
+      <DropdownContainer options={genres} />
       <div className="artists-container">
         {Object.values(
-          (selectedGenre !== undefined) ? (selectedGenre !==  "all") ? filtered : artists : artists
+          selectedGenre === undefined || selectedGenre === "all"
+            ? artists
+            : filtered
         ).map((artist) => {
           return <ArtistCard key={artist.id} artist={artist} />;
         })}
