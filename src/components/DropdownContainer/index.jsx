@@ -6,7 +6,7 @@ import { currentGenre } from "../../redux/reducer/selectors";
 
 const DropdownContainer = ({ options }) => {
   const selectedGenre = useSelector(currentGenre);
-  const [option, setOption] = useState("all");
+  const [option, setOption] = useState(selectedGenre);
   const [text] = useState("Filter by Genres");
 
   return (
