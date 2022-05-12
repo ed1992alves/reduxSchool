@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { addSong } from "../../../../redux/reducer/actions";
 import { useSelector } from "react-redux";
 import { IoMdClose } from "react-icons/io";
+import { ArtistSearchBar } from "../ArtistNameSearchBar";
+import { GenreDropdown } from "../GenreDropdown";
 
 export const Modal = ({ show, method }) => {
   const songs = useSelector((state) => state.songs);
@@ -57,32 +59,30 @@ export const Modal = ({ show, method }) => {
           />
         </div>
 
-        <form>
+        <form
+          onSubmit={() => {
+            myDispatch();
+            method(false);
+          }}
+        >
           <div className="modal-box-body">
-            {Object.keys(songs[1]).map((element) => {
-              return (
-                <div className="inputs-class" key={element}>
-                  <label> {element} :</label>
-                  <input
-                    onChange={(e) => songInfo(e)}
-                    name={element}
-                    placeholder={element}
-                  />
-                </div>
-              );
-            })}
+            <label>Name: </label>
+            <input placeholder="Name" required />
+
+            <label>Artist Name: </label>
+            <ArtistSearchBar />
+            <GenreDropdown />
+            <label>Year: </label>
+            <input type="number" placeholder="Year" required />
+
+            <label>Album: </label>
+
+            <label>Album Art: </label>
+            <input type="text" placeholder="Image-Url" required />
           </div>
 
           <div className="button-submit">
-            <button
-              onClick={() => {
-                myDispatch();
-                method(false);
-              }}
-              type="button"
-            >
-              Submit
-            </button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
