@@ -336,5 +336,5 @@ export const initialState = {
         "https://cdn.discordapp.com/attachments/968923738911428689/973598574707351552/unknown.png",
     },
   },
-  currrentGenre: "all",
+  currentGenre: "all",
 };

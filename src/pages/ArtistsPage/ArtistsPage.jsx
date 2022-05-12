@@ -25,6 +25,8 @@ const ArtistsPage = () => {
     artistsBySelectedGenre().includes(el.id)
   );
 
+  console.log(selectedGenre)
+
   return (
     <div className="artists-page-container">
       <h1>Artists</h1>
