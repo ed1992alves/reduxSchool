@@ -26,8 +26,7 @@ export const initialState = {
       city: "Porto",
       nationality: "Portuguese",
       email: "support@bookingagentinfo.com",
-      photo:
-        "https://scontent.flis12-1.fna.fbcdn.net/v/t39.30808-6/267446542_912162542818121_8243145234345412369_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=2pO0jo1lc-QAX_e5DWP&tn=-iNt1fX-N60_5woT&_nc_ht=scontent.flis12-1.fna&oh=00_AT-kygwM0TWGCmznnLeSCqi22uY_o2xtJapP88gihRA8vA&oe=6274C276",
+      photo: "https://upload.wikimedia.org/wikipedia/commons/2/27/Fotografia_oficial_do_Presidente_da_Rep%C3%BAblica_An%C3%ADbal_Cavaco_Silva.jpg",
     },
     4: {
       id: 4,
@@ -330,11 +329,12 @@ export const initialState = {
     21: {
       name: "Apiiiiitaaa Camelo",
       artistId: 15,
-      genre: "apitaaaaaa apitaaaa cameeelinhooo",
+      genre: "apita apita cameeelinho",
       year: 2019,
       album: "Final de Ano na RTP 1",
-      albumArt: "https://cdn.discordapp.com/attachments/968923738911428689/973598574707351552/unknown.png"
-    }
+      albumArt:
+        "https://cdn.discordapp.com/attachments/968923738911428689/973598574707351552/unknown.png",
+    },
   },
   currrentGenre: "all",
 };
