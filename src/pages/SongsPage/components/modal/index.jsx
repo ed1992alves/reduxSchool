@@ -1,5 +1,5 @@
 import "./style.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addSong } from "../../../../redux/reducer/actions";
 import { useSelector } from "react-redux";
@@ -9,6 +9,10 @@ import { GenreDropdown } from "../GenreDropdown";
 
 export const Modal = ({ show, method }) => {
   const songs = useSelector((state) => state.songs);
+  const artist = useSelector((state) => state.artists);
+
+  const [artistSelect, setArtistSelected] = useState();
+  const [mySong, setMySong] = useState([]);
 
   const [newSong, setNewSong] = useState({
     name: "",
@@ -41,11 +45,27 @@ export const Modal = ({ show, method }) => {
   const dispatch = useDispatch();
 
   const myDispatch = () => {
-    console.log("caga");
     dispatch(addSong(newSong));
   };
 
-  console.log(songs);
+  useEffect(() => {
+    let selectedArtist;
+    Object.values(artist).map((art) => {
+      if (art.name === artistSelect) {
+        selectedArtist = art;
+      }
+    });
+    const sings = [];
+    selectedArtist !== undefined &&
+      Object.values(songs).filter((son) => {
+        if (son.artistId == selectedArtist.id) {
+          sings.push(son);
+        }
+      });
+    setMySong(sings);
+  }, [artistSelect]);
+
+  console.log(mySong);
 
   return (
     <div className="modal">
@@ -58,7 +78,6 @@ export const Modal = ({ show, method }) => {
             className="close-modal"
           />
         </div>
-
         <form
           onSubmit={() => {
             myDispatch();
@@ -70,12 +89,19 @@ export const Modal = ({ show, method }) => {
             <input placeholder="Name" required />
 
             <label>Artist Name: </label>
-            <ArtistSearchBar />
+            <ArtistSearchBar setArtistSelected={setArtistSelected} />
             <GenreDropdown />
             <label>Year: </label>
             <input type="number" placeholder="Year" required />
 
             <label>Album: </label>
+            <input></input>
+            <div className="album-dropdown">
+            {mySong !== [] &&
+                mySong.map((element) => {
+                  return <button>{element.album}</button>
+                })}
+            </div>
 
             <label>Album Art: </label>
             <input type="text" placeholder="Image-Url" required />
