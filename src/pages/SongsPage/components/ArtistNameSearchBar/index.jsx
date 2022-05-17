@@ -31,11 +31,6 @@ export const ArtistSearchBar = ({ setArtistSelected }) => {
     setArtistSelected(option);
   };
 
-  const clearInput = () => {
-    setFilteredData([]);
-    setWordEntered("");
-  };
-
   return (
     <div className="artist-search-bar">
       <input

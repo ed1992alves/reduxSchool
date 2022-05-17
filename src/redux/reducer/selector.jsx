@@ -6,9 +6,5 @@ export const filterArtistName = (state) => {
   return names;
 };
 
-export const filterGenreName = (state) => {
-  const genre = state.genre.map((cenas) => {
-    return cenas;
-  });
-  return genre;
-};
+
+

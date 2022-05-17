@@ -6,14 +6,16 @@ import { useSelector } from "react-redux";
 import { IoMdClose } from "react-icons/io";
 import { ArtistSearchBar } from "../ArtistNameSearchBar";
 import { GenreDropdown } from "../GenreDropdown";
-
+import Axios from "axios";
+import { Song } from "../song/Song";
 export const Modal = ({ show, method }) => {
   const songs = useSelector((state) => state.songs);
   const artist = useSelector((state) => state.artists);
 
   const [artistSelect, setArtistSelected] = useState();
   const [mySong, setMySong] = useState([]);
-
+ const [album,setAlbum] = useState("")
+ const [image,setImage] = useState("")
   const [newSong, setNewSong] = useState({
     name: "",
     album: "",
@@ -44,6 +46,8 @@ export const Modal = ({ show, method }) => {
 
   const dispatch = useDispatch();
 
+
+
   const myDispatch = () => {
     dispatch(addSong(newSong));
   };
@@ -65,7 +69,11 @@ export const Modal = ({ show, method }) => {
     setMySong(sings);
   }, [artistSelect]);
 
-  console.log(mySong);
+
+
+  const methodx = (x)=>{
+    setAlbum(x)
+  }
 
   return (
     <div className="modal">
@@ -86,27 +94,38 @@ export const Modal = ({ show, method }) => {
         >
           <div className="modal-box-body">
             <label>Name: </label>
-            <input placeholder="Name" required />
+            <input  placeholder="Name" required />
 
             <label>Artist Name: </label>
             <ArtistSearchBar setArtistSelected={setArtistSelected} />
+
             <GenreDropdown />
+  
             <label>Year: </label>
-            <input type="number" placeholder="Year" required />
+            <input
+              className="date"
+              pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+              type="date"
+              placeholder="dd-mm-yyyy"
+              required
+            />
+          
+     
 
             <label>Album: </label>
-            <input></input>
+            <input defaultValue={album}></input>
+
             <div className="album-dropdown">
-            {mySong !== [] &&
+              {artistSelect !== undefined &&
                 mySong.map((element) => {
-                  return <button>{element.album}</button>
+                  return <div className="album-dropdown-button" onClick={()=>methodx(element.album)}>{element.album}</div>;
                 })}
             </div>
 
             <label>Album Art: </label>
-            <input type="text" placeholder="Image-Url" required />
+            <input onChange={(e)=> setImage(e.target.value)} type="text" placeholder="Image-Url" required />
+            <img className="imageTest"  src={image} onError={()=> setImage(image === "" ? "" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2e6NnqxKyp5xaTWQCafRIOOwDxKU01hbtJScTgrV-5A0kP4eJ9sggdlTtnxbJlXN6AN4&usqp=CAU") }></img>
           </div>
-
           <div className="button-submit">
             <button type="submit">Submit</button>
           </div>
