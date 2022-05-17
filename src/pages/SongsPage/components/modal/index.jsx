@@ -7,7 +7,6 @@ import { IoMdClose } from "react-icons/io";
 import { ArtistSearchBar } from "../ArtistNameSearchBar";
 import { GenreDropdown } from "../GenreDropdown";
 
-
 export const Modal = ({ show, method }) => {
   const songs = useSelector((state) => state.songs);
   const artist = useSelector((state) => state.artists);
@@ -17,19 +16,18 @@ export const Modal = ({ show, method }) => {
   const [album, setAlbum] = useState("");
   const [image, setImage] = useState("");
   const [newSong, setNewSong] = useState({});
+  const dispatch = useDispatch();
 
+
+  console.log(newSong);
 
   const songInfo = (e) => {
-  
+    
 
-
-   console.log(newSong);
-
-
+    //TODO: método responsável criar o objeto de novo song
     switch (e.target.name) {
       case "name":
-       // return setNewSong(value => {return {...value, name: e.target.value}});
-       return setNewSong({...newSong, name: e.target.value});
+        return setNewSong({ ...newSong, name: e.target.value });
       case "artist":
         return setNewSong({ ...newSong, artist: e.target.value });
       case "album":
@@ -41,27 +39,30 @@ export const Modal = ({ show, method }) => {
       case "genre":
         return setNewSong({ ...newSong, genre: e.target.value });
     }
-
- 
   };
 
-  const dispatch = useDispatch();
-
+// método responsável por dar dispatch para adicionar o novo song
   const myDispatch = () => {
     dispatch(addSong(newSong));
   };
 
-  useEffect(() => {
 
+  // - É chamado quando o modal é fechado ou á alteração do artistSelect
+  useEffect(() => {
     console.log(artistSelect);
- 
     let selectedArtist;
+
+    //- Encontrar o artista selecionado pelo nome
     Object.values(artist).map((art) => {
       if (art.name === artistSelect) {
         selectedArtist = art;
       }
     });
+
+
     const sings = [];
+    //TODO:
+    // - Encontrar os songs do artista selecionado
     selectedArtist !== undefined &&
       Object.values(songs).filter((son) => {
         if (son.artistId == selectedArtist.id) {
@@ -70,22 +71,16 @@ export const Modal = ({ show, method }) => {
         }
       });
 
-    setMySong(sings);
-
-    
-
+    setMySong(sings); //update lista de songs
   }, [artistSelect]);
 
-
-
-  const methodx = (x) => {
-    setAlbum(x);
-    console.log(artistSelect)
-    setNewSong({ ...newSong, artistId: artistSelect.id });
+  //TODO:
+  // - Metodo usado para actualizar o album e fechar o modal pondo o ArtistSelected como vazio (Martelada)
+  const methodx = (value) => {
+    setAlbum(value);
+    setNewSong({ ...newSong, album: value })
     setArtistSelected("");
   };
-
-  console.log(newSong)
 
   return (
     <div className="modal">
@@ -106,16 +101,29 @@ export const Modal = ({ show, method }) => {
         >
           <div className="modal-box-body">
             <label>Name: </label>
-            <input name="name" placeholder="Name" onChange={(e) => songInfo(e)} required />
+            <input
+              name="name"
+              placeholder="Name"
+              onChange={(e) => songInfo(e)}
+              autoComplete="off"
+              required
+            />
 
             <label>Artist Name: </label>
             <ArtistSearchBar setArtistSelected={setArtistSelected} />
 
             <label>Album: </label>
-            <input name="album" value={album} onBlur={(e) => songInfo(e)} placeholder="Album" required onChange={(e) => methodx(e.target.value)}></input>
+            <input
+              name="album"
+              value={album}
+              placeholder="Album"
+              autoComplete="off"
+              required
+              onChange={(e) => methodx(e.target.value)}
+            />  
 
             <div className="album-dropdown">
-              {artistSelect !== undefined  &&
+              {artistSelect !== undefined &&
                 mySong.map((element) => {
                   return (
                     <div
@@ -128,19 +136,19 @@ export const Modal = ({ show, method }) => {
                 })}
             </div>
 
-
             <GenreDropdown songInfo={songInfo} />
 
             <label>Year: </label>
             <input
+              name="year"
               className="date"
               pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
               type="date"
-              onBlur={(e) => songInfo(e)}
+              onChange={(e) => songInfo(e)}
               placeholder="dd-mm-yyyy"
+              autoComplete="off"
               required
             />
-
 
             <label>Album Art: </label>
             <input
@@ -148,6 +156,7 @@ export const Modal = ({ show, method }) => {
               type="text"
               placeholder="Image-Url"
               onBlur={(e) => songInfo(e)}
+              autoComplete="off"
               required
             />
             <img

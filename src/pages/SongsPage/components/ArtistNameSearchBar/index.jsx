@@ -40,6 +40,7 @@ export const ArtistSearchBar = ({ setArtistSelected }) => {
         type="text"
         value={wordEntered}
         onChange={handleSubmit}
+        autoComplete="off"
         placeholder="Search ..."
         required
       />

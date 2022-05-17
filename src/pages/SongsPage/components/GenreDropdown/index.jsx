@@ -21,12 +21,17 @@ export const GenreDropdown = ({songInfo}) => {
       <div className="genre-dropdown">
         <label>Genre:</label>
         <input
+          name="genre"
           onClick={handleGenre}
           value={newGenre}
           onBlur={(e) => songInfo(e)}
-          onChange={handleInput}
-          required
+          onChange={(e) => {
+            handleInput(e);
+            songInfo(e);
+          }}
           placeholder="Genre"
+          required
+          
         />
 
 
@@ -34,7 +39,7 @@ export const GenreDropdown = ({songInfo}) => {
         {showGenre &&
           selector.map((genre) => {
             return (
-              <div className="results-line" onClick={() => {setNewGenre(genre); handleGenre()}}>
+              <div className="results-line" onClick={(e) => {setNewGenre(genre); songInfo(e) ; handleGenre()}}>
                 <p>{genre}</p>
               </div>
             );
