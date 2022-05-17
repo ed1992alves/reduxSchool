@@ -322,5 +322,5 @@ export const initialState = {
         "https://cdnetwork.madeinportugalmusica.pt/wp-content/uploads/2020/11/Chico-da-Tina-VianaViceCity-1265x700.jpg",
     },
   },
-  genre: ["rock", "pop", "samba", "fado", "corridinho", "rap"],
+  genre: ["Rock", "Pop", "Samba", "Fado", "Corridinho", "Rap"],
 };

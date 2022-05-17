@@ -14,8 +14,10 @@
     width: 400px;
     background-color: rgb(0, 0, 0);
     position: fixed;
-    top: 10%;
+    top: 4%;
     border-radius: 5px;
+    overflow: scroll;
+
 
     .modal-box-header {
       padding-top: 14px;
@@ -115,12 +117,12 @@
         cursor: pointer;
       }
     }
+
+
+    .imageTest {
+      padding-left: 1px;
+      width: 101.9%;
+    }
   }
-  .imageTest{
-
-
-padding-left: 1px;
-    width: 102.15%;
-
-  }
+ 
 }

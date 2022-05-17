@@ -5,6 +5,8 @@ import React from "react";
 import { filterArtistName } from "../../../../redux/reducer/selector";
 
 export const ArtistSearchBar = ({ setArtistSelected }) => {
+
+  
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
@@ -34,6 +36,7 @@ export const ArtistSearchBar = ({ setArtistSelected }) => {
   return (
     <div className="artist-search-bar">
       <input
+        name="artist"
         type="text"
         value={wordEntered}
         onChange={handleSubmit}
