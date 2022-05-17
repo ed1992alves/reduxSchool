@@ -12,6 +12,32 @@
   );
   background-size: cover;
 
+  .filters {
+    width: 350px;
+    .sorters {
+      all: unset;
+      cursor: pointer;
+      border: 2px solid black;
+      color: black;
+      border-radius: 10px;
+      padding: 4px;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      transition: all 0.2s;
+      background-color: whitesmoke;
+
+      &:hover {
+        color: black;
+        background-color: rgb(201, 201, 201);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+
   .add-song {
     width: 100%;
     display: flex;
@@ -115,4 +141,3 @@
     }
   }
 }
-
