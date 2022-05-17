@@ -137,8 +137,15 @@ export const initialState = {
       photo:
         "https://cdn2.thelineofbestfit.com/images/made/images/remote/https_cdn2.thelineofbestfit.com/media/2014/SEB_TDLM_main_1290_1292.JPG",
     },
-
- 
+    14: {
+      id: 15,
+      name: "Chico da Tina",
+      age: 24,
+      city: "Lisbon",
+      nationality: "Portuguese",
+      email: "chicodaconcertina@gmail.com",
+      photo: "https://i.ytimg.com/vi/Gxb_fM12qMQ/maxresdefault.jpg",
+    },
   },
   songs: {
     1: {
@@ -178,7 +185,7 @@ export const initialState = {
     },
     5: {
       name: "Deixei tudo por ela",
-      artistId: 5,
+      artistId: 6,
       genre: "corridinho",
       year: 2008,
       album: "O Melhor e o Pior",
@@ -187,7 +194,7 @@ export const initialState = {
     },
     6: {
       name: "Pacify Her",
-      artistId: 6,
+      artistId: 7,
       genre: "pop",
       year: 2015,
       album: "Cry Baby",
@@ -196,7 +203,7 @@ export const initialState = {
     },
     7: {
       name: "Runaway",
-      artistId: 7,
+      artistId: 8,
       genre: "pop",
       year: 2015,
       album: "Running with the Wolves",
@@ -205,7 +212,7 @@ export const initialState = {
     },
     8: {
       name: "AHHHHHHHHH",
-      artistId: 8,
+      artistId: 9,
       genre: "pop",
       year: 2020,
       album: "LOOK AT THIS MESS IVE MADE EP",
@@ -214,7 +221,7 @@ export const initialState = {
     },
     9: {
       name: "Woman",
-      artistId: 9,
+      artistId: 10,
       genre: "pop",
       year: 2021,
       album: "Planet Her",
@@ -223,7 +230,7 @@ export const initialState = {
     },
     10: {
       name: "Lalala",
-      artistId: 10,
+      artistId: 11,
       genre: "pop",
       year: 2019,
       album: "Ultratop Hit Connection Best Of 2019.3",
@@ -232,7 +239,7 @@ export const initialState = {
     },
     11: {
       name: "Used to the Darkness",
-      artistId: 11,
+      artistId: 12,
       genre: "rock",
       year: 2018,
       album: "Let the Vultures In",
@@ -241,7 +248,7 @@ export const initialState = {
     },
     12: {
       name: "Electric Love",
-      artistId: 12,
+      artistId: 13,
       genre: "rock",
       year: 2015,
       album: "Dopamine",
@@ -250,15 +257,16 @@ export const initialState = {
     },
     13: {
       name: "god of the sunsets",
-      artistId: 13,
+      artistId: 14,
       genre: "hiphop",
       year: 2021,
       album: "god of the sunsets",
-      albumArt: "https://64.media.tumblr.com/9e9b60f390cd41c35639ad6e05f140ba/d8ae3044c56638c0-de/s540x810/b714c87227f8c3cb6514533a6ee0c4fbb4684771.png",
+      albumArt:
+        "https://64.media.tumblr.com/9e9b60f390cd41c35639ad6e05f140ba/d8ae3044c56638c0-de/s540x810/b714c87227f8c3cb6514533a6ee0c4fbb4684771.png",
     },
     14: {
       name: "Piano",
-      artistId: 14,
+      artistId: 5,
       genre: "rock",
       year: 2020,
       album: "Piano Release",
@@ -266,7 +274,7 @@ export const initialState = {
     },
     15: {
       name: "Violin",
-      artistId: 15,
+      artistId: 6,
       genre: "rock",
       year: 2010,
       album: "Violin Release",
@@ -274,7 +282,7 @@ export const initialState = {
     },
     16: {
       name: "Flute",
-      artistId: 16,
+      artistId: 4,
       genre: "rock",
       year: 2001,
       album: "Flute Release",
@@ -282,7 +290,7 @@ export const initialState = {
     },
     17: {
       name: "Saxophone",
-      artistId: 17,
+      artistId: 5,
       genre: "rock",
       year: 2000,
       album: "Saxophone Release",
@@ -290,7 +298,7 @@ export const initialState = {
     },
     18: {
       name: "Trumpet",
-      artistId: 18,
+      artistId: 6,
       genre: "rock",
       year: 1999,
       album: "Trumpet Release",
@@ -298,19 +306,20 @@ export const initialState = {
     },
     19: {
       name: "Ferrinhos",
-      artistId: 19,
+      artistId: 4,
       genre: "rock",
       year: 2020,
       album: "Ferrinhos Release",
       albumArt: "https://i.imgur.com/XqQXKZY.jpg",
     },
     20: {
-      name: "Guitarra",
-      artistId: 20,
-      genre: "rock",
-      year: 2100,
-      album: "Guitarra Release",
-      albumArt: "https://cdnetwork.madeinportugalmusica.pt/wp-content/uploads/2020/11/Chico-da-Tina-VianaViceCity-1265x700.jpg",
+      name: "Resort",
+      artistId: 15,
+      genre: "rap",
+      year: 2020,
+      album: "Resort",
+      albumArt:
+        "https://cdnetwork.madeinportugalmusica.pt/wp-content/uploads/2020/11/Chico-da-Tina-VianaViceCity-1265x700.jpg",
     },
   },
   genre: ["rock", "pop", "samba", "fado", "corridinho", "rap"],
