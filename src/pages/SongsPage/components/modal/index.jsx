@@ -26,6 +26,7 @@ export const Modal = ({ show, method }) => {
   });
 
   const songInfo = (e) => {
+    
     switch (e.target.name) {
       case "name":
         return setNewSong({ ...newSong, name: e.target.value });
@@ -42,7 +43,7 @@ export const Modal = ({ show, method }) => {
       case "genre":
         return setNewSong({ ...newSong, genre: e.target.value });
     }
-  };
+  console.log(newSong)};
 
   const dispatch = useDispatch();
 
@@ -88,8 +89,10 @@ export const Modal = ({ show, method }) => {
         </div>
         <form
           onSubmit={() => {
+            
             myDispatch();
             method(false);
+
           }}
         >
           <div className="modal-box-body">

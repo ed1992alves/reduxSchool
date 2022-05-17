@@ -37,20 +37,14 @@ const SongsPage = () => {
 
   function sortBySongName() {
     const copy = Object.values(mySongs);
-    const sortedData = copy.sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
+    const sortedData = copy.sort((a, b) => 
+      a.name.localeCompare(b.name));
+
     setFinalSongs(sortedData);
   }
 
   function sortByArtistName() {
-    const copy = Object.values(mySongs);
+    /* const copy = Object.values(mySongs);
     const sortedData = copy.sort((a, b) => {
       if (a.name < b.name) {
         return -1;
@@ -60,34 +54,57 @@ const SongsPage = () => {
       }
       return 0;
     });
-    setFinalSongs(sortedData);
-  }
+    setFinalSongs(sortedData); */
+    /* 
+    const copySongs = Object.values(mySongs);
+    const copyArtists = Object.entries(myArtists);
 
-  function sortByArtistId() {
-    const copy = Object.values(mySongs);
-    const sortedData = copy.sort((a, b) => {
-      if (a.artistId < b.artistsId) {
+    let addArtistSongs = [];
+
+    copySongs.map((element) => {
+      copyArtists.map((elem) => {
+        if (element.artistId == elem[0]) {
+          console.log("entrei");
+          addArtistSongs.push({ ...element, artistName: elem[1].name });
+        }
+      });
+    });
+    const sortedData = addArtistSongs.sort((a, b) => {
+      if (a.artistName < b.artistName) {
         return -1;
       }
-      if (a.artistId > b.artistId) {
+      if (a.artistName > b.artistName) {
         return 1;
       }
       return 0;
     });
+    setFinalSongs(sortedData); */
+
+    const copyArtists = Object.values(myArtists).sort((a, b) =>  a.name.localeCompare(b.name));
+    const copySongs = Object.values(mySongs);
+
+    let array = [];
+
+    copyArtists.map((e) => {
+      copySongs.map((f) => {
+        if (e.id === f.artistId) {
+          array.push(f)
+        }
+      });
+    });
+    setFinalSongs(array);
+  
+  }
+
+  function sortByArtistId() {
+    const copy = Object.values(mySongs);
+    const sortedData = copy.sort((a, b) =>  a.artistId -b.artistId);
     setFinalSongs(sortedData);
   }
 
   function sortByYear() {
     const copy = Object.values(mySongs);
-    const sortedData = copy.sort((a, b) => {
-      if (a.year < b.year) {
-        return -1;
-      }
-      if (a.year > b.year) {
-        return 1;
-      }
-      return 0;
-    });
+    const sortedData = copy.sort((a, b) => a.year - b.year);
     setFinalSongs(sortedData);
   }
 

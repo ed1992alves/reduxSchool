@@ -137,7 +137,7 @@ export const initialState = {
       photo:
         "https://cdn2.thelineofbestfit.com/images/made/images/remote/https_cdn2.thelineofbestfit.com/media/2014/SEB_TDLM_main_1290_1292.JPG",
     },
-    14: {
+    15: {
       id: 15,
       name: "Chico da Tina",
       age: 24,
