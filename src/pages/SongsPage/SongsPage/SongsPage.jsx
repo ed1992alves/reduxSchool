@@ -11,36 +11,14 @@ const SongsPage = () => {
   const [finalSongs, setFinalSongs] = useState(mySongs);
   const [ordenedArtists, setOrdenedArtists] = useState(myArtists);
 
-  console.log(mySongs);
-
-  const findArtistName = (id) => {
-    return Object.values(myArtists).map((artist) => {
-      if (artist.id === id && artist.id != undefined) {
-        return artist.name;
-      }
-    });
-  };
-
-  function getArtistArrayNameOrdened() {
-    const copy = Object.values(myArtists);
-    const sortedData = copy.sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
-    setOrdenedArtists(sortedData);
-  }
-
   function sortBySongName() {
-    const copy = Object.values(mySongs);
-    const sortedData = copy.sort((a, b) => 
-      a.name.localeCompare(b.name));
-
-    setFinalSongs(sortedData);
+    const copy = Object.entries(mySongs);
+    const sortedData = copy.sort((a, b) => a[1].name.localeCompare(b[1].name));
+    let obj = {}
+    sortedData.map((e,i)=> {
+      obj = {...obj,[i+1]: e[1]}
+    })
+    setFinalSongs(obj);
   }
 
   function sortByArtistName() {
@@ -80,33 +58,47 @@ const SongsPage = () => {
     });
     setFinalSongs(sortedData); */
 
-    const copyArtists = Object.values(myArtists).sort((a, b) =>  a.name.localeCompare(b.name));
-    const copySongs = Object.values(mySongs);
+    const copyArtists = Object.values(myArtists).sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+    const copySongs = Object.entries(mySongs);
 
-    let array = [];
+    let array = {};
+    let i = 1;
 
     copyArtists.map((e) => {
-      copySongs.map((f) => {
-        if (e.id === f.artistId) {
-          array.push(f)
+      copySongs.map((f) => {  
+        console.log(f[1]);
+        if (e.id == f[1].artistId) {
+          array = { ...array, [i]: f[1] };
+          i++;
         }
       });
     });
+
     setFinalSongs(array);
-  
   }
 
   function sortByArtistId() {
-    const copy = Object.values(mySongs);
-    const sortedData = copy.sort((a, b) =>  a.artistId -b.artistId);
-    setFinalSongs(sortedData);
+    const copy = Object.entries(mySongs);
+    const sortedData = copy.sort((a, b) => a[1].artistId - b[1].artistId);
+    let obj = {}
+    sortedData.map((e,i)=> {
+      obj = {...obj,[i+1]: e[1]}
+    })
+    setFinalSongs(obj);
   }
 
   function sortByYear() {
-    const copy = Object.values(mySongs);
-    const sortedData = copy.sort((a, b) => a.year - b.year);
-    setFinalSongs(sortedData);
+    const copy = Object.entries(mySongs);
+    const sortedData = copy.sort((a, b) => a[1].year - b[1].year);
+    let obj = {}
+    sortedData.map((e,i)=> {
+      obj = {...obj,[i+1]: e[1]}
+    })  
+    setFinalSongs(obj);
   }
+
 
   return (
     <>
@@ -125,11 +117,10 @@ const SongsPage = () => {
             By Artist name
           </button>
           <div className="add-song">
-          <div className="add-song-text">
-            <button onClick={() => setShow(true)}>Add Song</button>
+            <div className="add-song-text">
+              <button onClick={() => setShow(true)}>Add Song</button>
+            </div>
           </div>
-        </div>
-      
         </div>
         <div className="list">
           {Object.entries(finalSongs).map(([keys, values]) => {

@@ -18,11 +18,9 @@ export const Modal = ({ show, method }) => {
   const [newSong, setNewSong] = useState({});
   const dispatch = useDispatch();
 
-
   console.log(newSong);
 
   const songInfo = (e) => {
-
     //TODO: método responsável criar o objeto de novo song
     switch (e.target.name) {
       case "name":
@@ -38,13 +36,13 @@ export const Modal = ({ show, method }) => {
       case "genre":
         return setNewSong({ ...newSong, genre: e.target.value });
     }
-  console.log(newSong)};
+    console.log(newSong);
+  };
 
-// método responsável por dar dispatch para adicionar o novo song
+  // método responsável por dar dispatch para adicionar o novo song
   const myDispatch = () => {
     dispatch(addSong(newSong));
   };
-
 
   // - É chamado quando o modal é fechado ou á alteração do artistSelect
   useEffect(() => {
@@ -58,26 +56,25 @@ export const Modal = ({ show, method }) => {
       }
     });
 
-
-    const sings = [];
+    let sings = {};
     //TODO:
     // - Encontrar os songs do artista selecionado
     selectedArtist !== undefined &&
       Object.values(songs).filter((son) => {
         if (son.artistId == selectedArtist.id) {
-          sings.push(son);
+          sings = { ...sings, [son.album]: son.album };
           setNewSong({ ...newSong, artistId: selectedArtist.id });
         }
       });
 
-    setMySong(sings); //update lista de songs
+    setMySong(Object.values(sings)); //update lista de songs
   }, [artistSelect]);
 
   //TODO:
   // - Metodo usado para actualizar o album e fechar o modal pondo o ArtistSelected como vazio (Martelada)
   const methodx = (value) => {
     setAlbum(value);
-    setNewSong({ ...newSong, album: value })
+    setNewSong({ ...newSong, album: value });
     setArtistSelected("");
   };
 
@@ -94,10 +91,8 @@ export const Modal = ({ show, method }) => {
         </div>
         <form
           onSubmit={() => {
-            
             myDispatch();
             method(false);
-
           }}
         >
           <div className="modal-box-body">
@@ -121,7 +116,7 @@ export const Modal = ({ show, method }) => {
               autoComplete="off"
               required
               onChange={(e) => methodx(e.target.value)}
-            />  
+            />
 
             <div className="album-dropdown">
               {artistSelect !== undefined &&
@@ -129,9 +124,9 @@ export const Modal = ({ show, method }) => {
                   return (
                     <div
                       className="album-dropdown-button"
-                      onClick={() => methodx(element.album)}
+                      onClick={() => methodx(element)}
                     >
-                      {element.album}
+                      {element}
                     </div>
                   );
                 })}
