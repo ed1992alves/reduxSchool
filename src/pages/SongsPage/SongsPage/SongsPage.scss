@@ -19,6 +19,24 @@
     padding: 10px;
     box-sizing: border-box;
 
+    .sortersDiv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 5px;
+
+      .sortSpan {
+        font-size: 17px;
+      }
+      .sorterIcon {
+        cursor: pointer;
+      }
+      .sorterIcon:hover {
+        transition: 1s;
+        color: gray;
+      }
+    }
     .sorters {
       position: absolute;
       all: unset;

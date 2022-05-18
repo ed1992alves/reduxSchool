@@ -16,13 +16,12 @@ export const Modal = ({ show, method }) => {
   const [album, setAlbum] = useState("");
   const [image, setImage] = useState("");
   const [newSong, setNewSong] = useState({});
+  const [heightImage, setHeightImage] = useState("0");
   const dispatch = useDispatch();
-
 
   console.log(newSong);
 
   const songInfo = (e) => {
-
     //TODO: método responsável criar o objeto de novo song
     switch (e.target.name) {
       case "name":
@@ -38,13 +37,13 @@ export const Modal = ({ show, method }) => {
       case "genre":
         return setNewSong({ ...newSong, genre: e.target.value });
     }
-  console.log(newSong)};
+    console.log(newSong);
+  };
 
-// método responsável por dar dispatch para adicionar o novo song
+  // método responsável por dar dispatch para adicionar o novo song
   const myDispatch = () => {
     dispatch(addSong(newSong));
   };
-
 
   // - É chamado quando o modal é fechado ou á alteração do artistSelect
   useEffect(() => {
@@ -57,7 +56,6 @@ export const Modal = ({ show, method }) => {
         selectedArtist = art;
       }
     });
-
 
     const sings = [];
     //TODO:
@@ -77,7 +75,7 @@ export const Modal = ({ show, method }) => {
   // - Metodo usado para actualizar o album e fechar o modal pondo o ArtistSelected como vazio (Martelada)
   const methodx = (value) => {
     setAlbum(value);
-    setNewSong({ ...newSong, album: value })
+    setNewSong({ ...newSong, album: value });
     setArtistSelected("");
   };
 
@@ -94,10 +92,8 @@ export const Modal = ({ show, method }) => {
         </div>
         <form
           onSubmit={() => {
-            
             myDispatch();
             method(false);
-
           }}
         >
           <div className="modal-box-body">
@@ -121,7 +117,7 @@ export const Modal = ({ show, method }) => {
               autoComplete="off"
               required
               onChange={(e) => methodx(e.target.value)}
-            />  
+            />
 
             <div className="album-dropdown">
               {artistSelect !== undefined &&
@@ -160,17 +156,20 @@ export const Modal = ({ show, method }) => {
               autoComplete="off"
               required
             />
-            <img
-              className="imageTest"
-              src={image}
-              onError={() =>
-                setImage(
-                  image === ""
-                    ? ""
-                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2e6NnqxKyp5xaTWQCafRIOOwDxKU01hbtJScTgrV-5A0kP4eJ9sggdlTtnxbJlXN6AN4&usqp=CAU"
-                )
-              }
-            ></img>
+
+            <div className="image-preview">
+              <img
+                className="imageTest"
+                src={image}
+                onError={() =>
+                  setImage(
+                    image === ""
+                      ? ""
+                      : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2e6NnqxKyp5xaTWQCafRIOOwDxKU01hbtJScTgrV-5A0kP4eJ9sggdlTtnxbJlXN6AN4&usqp=CAU"
+                  )
+                }
+              ></img>
+            </div>
           </div>
           <div className="button-submit">
             <button type="submit">Submit</button>
