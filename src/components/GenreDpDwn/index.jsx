@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyledButton, DropdownList } from "./styles";
 
-const NatDropdown = ({options, ref }) => {
-  const [value, setValue] = useState("Nationality");
+const GenreDpDwn = ({options, ref }) => {
+  const [value, setValue] = useState("Genre");
   const [scale, setScale] = useState(0);
 
   const scaleDropdownList = () => {
@@ -14,7 +14,7 @@ const NatDropdown = ({options, ref }) => {
     scaleDropdownList();
   };
 
-  return (
+  return ( 
     <>
       <StyledButton ref={ref} onClick={() => scaleDropdownList()}>
         {value}
@@ -34,4 +34,4 @@ const NatDropdown = ({options, ref }) => {
   );
 };
 
-export default NatDropdown;
+export default GenreDpDwn;

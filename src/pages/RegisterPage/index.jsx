@@ -13,41 +13,9 @@ const RegisterPage = () => {
   const nationalityRef = useRef({ value: "" });
   const photoRef = useRef({ value: "" });
 
-  const folkloreRef = useRef({ value: "" });
-  const ppmRef = useRef({ value: "" });
-  const popRef = useRef({ value: "" });
-  const hipHopRef = useRef({ value: "" });
-  const randbRef = useRef({ value: "" });
-  const emoRapRef = useRef({ value: "" });
-  const popRapRef = useRef({ value: "" });
-  const trapTugaRef = useRef({ value: "" });
-  const indiePopRef = useRef({ value: "" });
-  const alternativePopRef = useRef({ value: "" });
-  const indieRockRef = useRef({ value: "" });
-  const rockRef = useRef({ value: "" });
-  const hardRockRef = useRef({ value: "" });
-  const alternativeRockRef = useRef({ value: "" });
-  const glamRockRef = useRef({ value: "" });
-  const hardcoreSireneDosBombeirosRef = useRef({ value: "" });
+  
+  const genresDropdownRef = useRef({ value: "" });
 
-  const genres = [
-    folkloreRef,
-    ppmRef,
-    popRef,
-    hipHopRef,
-    randbRef,
-    emoRapRef,
-    popRapRef,
-    trapTugaRef,
-    indiePopRef,
-    alternativePopRef,
-    indieRockRef,
-    rockRef,
-    hardRockRef,
-    alternativeRockRef,
-    glamRockRef,
-    hardcoreSireneDosBombeirosRef,
-  ];
 
   const handleClick = () => {
     let genre = [];
@@ -77,27 +45,6 @@ const RegisterPage = () => {
           { text: "Photo URL", type: "text", ref: photoRef },
         ]}
         
-        checkbox={[
-          { text: "folklore", ref: folkloreRef },
-          { text: "portuguese popular music", ref: ppmRef },
-          { text: "pop", ref: popRef },
-          { text: "hip-hop", ref: hipHopRef },
-          { text: "r&b", ref: randbRef },
-          { text: "emo rap", ref: emoRapRef },
-          { text: "pop-rap", ref: popRapRef },
-          { text: "trap-tuga", ref: trapTugaRef },
-          { text: "indie pop", ref: indiePopRef },
-          { text: "alternative pop", ref: alternativePopRef },
-          { text: "indie rock", ref: indieRockRef },
-          { text: "rock", ref: rockRef },
-          { text: "hard rock", ref: hardRockRef },
-          { text: "alternative rock", ref: alternativeRockRef },
-          { text: "glam rock", ref: glamRockRef },
-          {
-            text: "hardcore sirene dos bombeiros",
-            ref: hardcoreSireneDosBombeirosRef,
-          },
-        ]}
         handleClick={handleClick}
         submitButtonText={"Submit Artist"}
       />

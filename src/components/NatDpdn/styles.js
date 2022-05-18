@@ -1,10 +1,12 @@
-.dropdown-btn {
+import styled from "styled-components";
+
+export const StyledButton = styled.button`
   min-height: 50px;
   min-width: 250px;
   text-align: center;
   font-size: 16px;
-  // color: ${(props) => (props.active ? "white" : "black")};
-  // background-color: ${(props) => (props.active ? "rgb(128,128,128)" : "white")};
+  color: ${(props) => (props.active ? "white" : "black")};
+  background-color: ${(props) => (props.active ? "rgb(128,128,128)" : "white")};
   border: 1px solid black;
   border-radius: 5px;
   &:hover {
@@ -12,7 +14,7 @@
     background-color: rgb(188, 188, 188);
     color: black;
   }
-}
+`;
 
 export const DropdownList = styled.div`
   display: flex;
@@ -23,6 +25,10 @@ export const DropdownList = styled.div`
   transition: all 0.5s ease;
   transform-origin: top;
   overflow: scroll;
+  position: absolute;
+  top: 50px;
+  background-color: transparent;
+  color: whitesmoke;
 `;
 
 export const X = styled.div`

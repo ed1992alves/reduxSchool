@@ -2,8 +2,31 @@ import React from "react";
 import "./index.scss";
 import NatDpdnCont from "../NatDpdnCont/index";
 import nationalitiesArr from "../../utils/nationalities";
+import GenreDpDwnCont from "../GenreDpDwnCont";
 
-const AjustableForm = ({ fields, handleClick, checkbox, submitButtonText }) => {
+
+const genres = [
+  "Folklore",
+  "Portuguese popular music",
+  "Pop",
+  "HipHop",
+  "R&B",
+  "Emo Rap",
+  "Pop Rap",
+  "Trap Tuga",
+  "Indie Pop",
+  "Alternative pop",
+  "Indie Rock",
+  "Rock",
+  "Hard Rock",
+  "Alternative Rock",
+  "Glam Rock",
+  "HardcoreSB",
+];
+
+const AjustableForm = ({ fields, handleClick, submitButtonText }) => {
+
+
   return (
     <div className="form-container">
       {fields.map((e) => (
@@ -16,15 +39,8 @@ const AjustableForm = ({ fields, handleClick, checkbox, submitButtonText }) => {
         />
       ))}
       <NatDpdnCont options={nationalitiesArr}/>
-      <div className="form-checkboxes">
-        {checkbox.map((e) => (
-          <div key={e + String(Math.random())} className="checkbox">
-            <input type="checkbox" name={e.text} value={e.text} ref={e.ref} />
-            <label htmlFor={e.text}>{e.text}</label>
-            <br />
-          </div>
-        ))}
-      </div>
+      
+      <GenreDpDwnCont options={genres}/>
       <button onClick={handleClick} className="form-buttom">{submitButtonText}</button>
     </div>
   );
