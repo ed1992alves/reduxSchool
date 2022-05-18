@@ -2,27 +2,7 @@ import React from "react";
 import "./index.scss";
 import NatDpdnCont from "../NatDpdnCont/index";
 import nationalitiesArr from "../../utils/nationalities";
-import GenreDpDwnCont from "../GenreDpDwnCont";
 
-
-const genres = [
-  "Folklore",
-  "Portuguese popular music",
-  "Pop",
-  "HipHop",
-  "R&B",
-  "Emo Rap",
-  "Pop Rap",
-  "Trap Tuga",
-  "Indie Pop",
-  "Alternative pop",
-  "Indie Rock",
-  "Rock",
-  "Hard Rock",
-  "Alternative Rock",
-  "Glam Rock",
-  "HardcoreSB",
-];
 
 const AjustableForm = ({ fields, handleClick, submitButtonText }) => {
 
@@ -31,7 +11,7 @@ const AjustableForm = ({ fields, handleClick, submitButtonText }) => {
     <div className="form-container">
       {fields.map((e) => (
         <input
-          className="form-input"
+          className={e.type === "number" ? "form-input hide-arrows": "form-input"}
           key={e + String(Math.random())}
           type={e.type}
           placeholder={e.text}
@@ -40,7 +20,6 @@ const AjustableForm = ({ fields, handleClick, submitButtonText }) => {
       ))}
       <NatDpdnCont options={nationalitiesArr}/>
       
-      <GenreDpDwnCont options={genres}/>
       <button onClick={handleClick} className="form-buttom">{submitButtonText}</button>
     </div>
   );

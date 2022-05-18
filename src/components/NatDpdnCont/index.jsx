@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { X } from "../DropdownContainer/styles";
 import NatDropdown from "../NatDpdn";
 

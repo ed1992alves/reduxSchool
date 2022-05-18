@@ -4,11 +4,14 @@ export const StyledButton = styled.button`
   min-height: 50px;
   min-width: 250px;
   text-align: center;
-  font-size: 16px;
+  font-size: 22px;
   color: ${(props) => (props.active ? "white" : "black")};
-  background-color: ${(props) => (props.active ? "rgb(128,128,128)" : "white")};
-  border: 1px solid black;
+  background-color: ${(props) =>
+    props.active === true ? "rgb(148,148,148)" : "rgb(31,31,31)"};
   border-radius: 5px;
+  color: rgb(151, 151, 151);
+  border: 0px;
+  font-family: "Lato", sans-serif;
   &:hover {
     cursor: pointer;
     background-color: rgb(188, 188, 188);
@@ -27,8 +30,6 @@ export const DropdownList = styled.div`
   overflow: scroll;
   position: absolute;
   top: 50px;
-  background-color: transparent;
-  color: whitesmoke;
 `;
 
 export const X = styled.div`

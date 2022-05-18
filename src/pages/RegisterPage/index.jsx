@@ -13,15 +13,9 @@ const RegisterPage = () => {
   const nationalityRef = useRef({ value: "" });
   const photoRef = useRef({ value: "" });
 
-  
   const genresDropdownRef = useRef({ value: "" });
 
-
   const handleClick = () => {
-    let genre = [];
-    genres.forEach((el) => {
-      el.current.checked && genre.push(el.current.name);
-    });
     let newArtist = {};
     newArtist.name = artistNameRef.current.value;
     newArtist.age = ageRef.current.value;
@@ -29,9 +23,8 @@ const RegisterPage = () => {
     newArtist.nationality = nationalityRef.current.value;
     newArtist.email = emailRef.current.value;
     newArtist.photo = photoRef.current.value;
-    newArtist.genre = genre;
-    console.log(newArtist);
     dispatch({ type: "SET_NEW_ARTIST", newArtist });
+    alert("criaste");
   };
 
   return (
@@ -44,7 +37,6 @@ const RegisterPage = () => {
           { text: "City", type: "text", ref: cityRef },
           { text: "Photo URL", type: "text", ref: photoRef },
         ]}
-        
         handleClick={handleClick}
         submitButtonText={"Submit Artist"}
       />
