@@ -12,12 +12,14 @@
   );
   background-size: cover;
 
+
   .filters {
     width: 100%;
     display: flex;
     flex-direction: row;
     padding: 10px;
     box-sizing: border-box;
+    font-family: "Abel", sans-serif;
 
     .sortersDiv {
       display: flex;
@@ -27,7 +29,7 @@
       padding: 5px;
 
       .sortSpan {
-        font-size: 17px;
+        font-size: 18px;
       }
       .sorterIcon {
         cursor: pointer;
@@ -68,7 +70,8 @@
     justify-content: flex-end;
 
     .add-song-text {
-      font-family: "Lato", sans-serif;
+      font-family: "Abel", sans-serif;
+      font-size: 20px;
 
       & button {
         all: unset;
