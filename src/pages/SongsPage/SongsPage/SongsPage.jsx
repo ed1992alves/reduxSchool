@@ -124,11 +124,12 @@ const SongsPage = () => {
           <button className="sorters" onClick={() => sortByArtistName()}>
             By Artist name
           </button>
-        </div>
-        <div className="add-song">
+          <div className="add-song">
           <div className="add-song-text">
             <button onClick={() => setShow(true)}>Add Song</button>
           </div>
+        </div>
+      
         </div>
         <div className="list">
           {Object.entries(finalSongs).map(([keys, values]) => {
