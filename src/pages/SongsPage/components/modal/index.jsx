@@ -16,6 +16,7 @@ export const Modal = ({ show, method }) => {
   const [album, setAlbum] = useState("");
   const [image, setImage] = useState("");
   const [newSong, setNewSong] = useState({});
+  const [heightImage, setHeightImage] = useState("0");
   const dispatch = useDispatch();
 
   console.log(newSong);
@@ -155,17 +156,20 @@ export const Modal = ({ show, method }) => {
               autoComplete="off"
               required
             />
-            <img
-              className="imageTest"
-              src={image}
-              onError={() =>
-                setImage(
-                  image === ""
-                    ? ""
-                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2e6NnqxKyp5xaTWQCafRIOOwDxKU01hbtJScTgrV-5A0kP4eJ9sggdlTtnxbJlXN6AN4&usqp=CAU"
-                )
-              }
-            ></img>
+
+            <div className="image-preview">
+              <img
+                className="imageTest"
+                src={image}
+                onError={() =>
+                  setImage(
+                    image === ""
+                      ? ""
+                      : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2e6NnqxKyp5xaTWQCafRIOOwDxKU01hbtJScTgrV-5A0kP4eJ9sggdlTtnxbJlXN6AN4&usqp=CAU"
+                  )
+                }
+              ></img>
+            </div>
           </div>
           <div className="button-submit">
             <button type="submit">Submit</button>

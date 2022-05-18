@@ -12,13 +12,33 @@
   );
   background-size: cover;
 
+
   .filters {
     width: 100%;
     display: flex;
     flex-direction: row;
     padding: 10px;
     box-sizing: border-box;
+    font-family: "Abel", sans-serif;
 
+    .sortersDiv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 5px;
+
+      .sortSpan {
+        font-size: 18px;
+      }
+      .sorterIcon {
+        cursor: pointer;
+      }
+      .sorterIcon:hover {
+        transition: 1s;
+        color: gray;
+      }
+    }
     .sorters {
       position: absolute;
       all: unset;
@@ -50,7 +70,8 @@
     justify-content: flex-end;
 
     .add-song-text {
-      font-family: "Lato", sans-serif;
+      font-family: "Abel", sans-serif;
+      font-size: 20px;
 
       & button {
         all: unset;

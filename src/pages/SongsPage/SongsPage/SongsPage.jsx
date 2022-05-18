@@ -3,6 +3,9 @@ import "./SongsPage.scss";
 import { Song } from "../components/song/Song";
 import React, { useState } from "react";
 import { Modal } from "../components/modal";
+import { AiOutlineSortAscending } from "react-icons/ai";
+import { AiOutlineArrowDown } from "react-icons/ai";
+import { BsSortNumericDown } from "react-icons/bs";
 
 const SongsPage = () => {
   const [show, setShow] = useState(false);
@@ -14,10 +17,10 @@ const SongsPage = () => {
   function sortBySongName() {
     const copy = Object.entries(mySongs);
     const sortedData = copy.sort((a, b) => a[1].name.localeCompare(b[1].name));
-    let obj = {}
-    sortedData.map((e,i)=> {
-      obj = {...obj,[i+1]: e[1]}
-    })
+    let obj = {};
+    sortedData.map((e, i) => {
+      obj = { ...obj, [i + 1]: e[1] };
+    });
     setFinalSongs(obj);
   }
 
@@ -67,7 +70,7 @@ const SongsPage = () => {
     let i = 1;
 
     copyArtists.map((e) => {
-      copySongs.map((f) => {  
+      copySongs.map((f) => {
         console.log(f[1]);
         if (e.id == f[1].artistId) {
           array = { ...array, [i]: f[1] };
@@ -82,40 +85,58 @@ const SongsPage = () => {
   function sortByArtistId() {
     const copy = Object.entries(mySongs);
     const sortedData = copy.sort((a, b) => a[1].artistId - b[1].artistId);
-    let obj = {}
-    sortedData.map((e,i)=> {
-      obj = {...obj,[i+1]: e[1]}
-    })
+    let obj = {};
+    sortedData.map((e, i) => {
+      obj = { ...obj, [i + 1]: e[1] };
+    });
     setFinalSongs(obj);
   }
-
   function sortByYear() {
     const copy = Object.entries(mySongs);
     const sortedData = copy.sort((a, b) => a[1].year - b[1].year);
-    let obj = {}
-    sortedData.map((e,i)=> {
-      obj = {...obj,[i+1]: e[1]}
-    })  
+    let obj = {};
+    sortedData.map((e, i) => {
+      obj = { ...obj, [i + 1]: e[1] };
+    });
     setFinalSongs(obj);
   }
-
 
   return (
     <>
       <div className="songsPage-container">
         <div className="filters">
-          <button className="sorters" onClick={() => sortByArtistId()}>
-            By Artist Id
-          </button>
-          <button className="sorters" onClick={() => sortByYear()}>
-            By Year
-          </button>
-          <button className="sorters" onClick={() => sortBySongName()}>
-            By Song name
-          </button>
-          <button className="sorters" onClick={() => sortByArtistName()}>
-            By Artist name
-          </button>
+          <div className="sortersDiv">
+            <span className="sortSpan">Artist ID</span>
+            <BsSortNumericDown
+              size={40}
+              onClick={() => sortByArtistId()}
+              className="sorterIcon"
+            />
+          </div>
+          <div className="sortersDiv">
+            <span className="sortSpan">Year</span>
+            <BsSortNumericDown
+              size={40}
+              onClick={() => sortByYear()}
+              className="sorterIcon"
+            />
+          </div>
+          <div className="sortersDiv">
+            <span className="sortSpan">Song</span>
+            <AiOutlineSortAscending
+              size={40}
+              onClick={() => sortBySongName()}
+              className="sorterIcon"
+            />
+          </div>
+          <div className="sortersDiv">
+            <span className="sortSpan">Artist</span>
+            <AiOutlineSortAscending
+              size={40}
+              onClick={() => sortByArtistName()}
+              className="sorterIcon"
+            />
+          </div>
           <div className="add-song">
             <div className="add-song-text">
               <button onClick={() => setShow(true)}>Add Song</button>
