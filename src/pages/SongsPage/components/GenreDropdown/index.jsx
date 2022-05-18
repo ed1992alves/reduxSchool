@@ -22,6 +22,7 @@ export const GenreDropdown = ({songInfo}) => {
         <label>Genre:</label>
         <input
           name="genre"
+          autoComplete="off"
           onClick={handleGenre}
           value={newGenre}
           onBlur={(e) => songInfo(e)}

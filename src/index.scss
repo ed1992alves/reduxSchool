@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel');
 
+@media only screen and (max-width: 600px) {
+  body {
+    width: 600px;
+    min-width: 350px;
+    height: 100%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
