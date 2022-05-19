@@ -12,7 +12,6 @@ const SongsPage = () => {
   const mySongs = useSelector((state) => state.songs);
   const myArtists = useSelector((state) => state.artists);
   const [finalSongs, setFinalSongs] = useState(mySongs);
-  const [ordenedArtists, setOrdenedArtists] = useState(myArtists);
 
   function sortBySongName() {
     const copy = Object.entries(mySongs);
@@ -71,7 +70,6 @@ const SongsPage = () => {
 
     copyArtists.map((e) => {
       copySongs.map((f) => {
-        console.log(f[1]);
         if (e.id == f[1].artistId) {
           array = { ...array, [i]: f[1] };
           i++;
@@ -100,6 +98,16 @@ const SongsPage = () => {
     });
     setFinalSongs(obj);
   }
+
+  const idSelector = (value) => {
+    let myKey;
+    Object.entries(mySongs).map(([keys, values]) => {
+      if (value.name === values.name) {
+        myKey = keys;
+      }
+    });
+    return myKey;
+  };
 
   return (
     <>
@@ -144,8 +152,8 @@ const SongsPage = () => {
           </div>
         </div>
         <div className="list">
-          {Object.entries(finalSongs).map(([keys, values]) => {
-            return <Song song={values} id={keys} />;
+          {Object.values(finalSongs).map((values) => {
+            return <Song song={values} id={idSelector(values)} />;
           })}
         </div>
       </div>
